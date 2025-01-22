@@ -1,4 +1,4 @@
-# # Gazdálkodj Okosan
+#  Gazdálkodj Okosan
 
 ## Játék Leírás
 A "Gazdálkodj Okosan" egy szórakoztató társasjáték, amelyben két játékos versenyez egymással. A cél az, hogy minden szobát berendezz a házadban, miközben óvatosan gazdálkodsz a pénzeddel.
