@@ -47,3 +47,5 @@ A "Gazdálkodj Okosan" egy szórakoztató társasjáték, amelyben két játéko
 - Fazekas Botond
 - Schmitzhofer Pál
 
+## Egy vázlat a játékról:
+![alt text](https://github.com/p4likas51/gazdalkodj_okosan/blob/main/vazlat.png?raw=true)
