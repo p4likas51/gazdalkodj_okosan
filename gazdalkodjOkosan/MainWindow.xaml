@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gazdalkodjOkosan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="1920" FontSize="40">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition Height="115"></RowDefinition>
+            <RowDefinition Height="115"></RowDefinition>
+            <RowDefinition Height="115"></RowDefinition>
+            <RowDefinition Height="115"></RowDefinition>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            
+        </Grid.RowDefinitions>
 
+        <Label Grid.Row="2" Grid.Column="1" Content="X"/>
+        <Label Grid.Row="7" Grid.Column="1" Content="X"/>
+        <Label Grid.Row="7" Grid.Column="8" Content="X"/>
+        <Label Grid.Row="2" Grid.Column="8" Content="X"/>
+
+        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
+        <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
+
+
+        <Border Grid.Column="1" Grid.Row="4">
+            <Border.Background>
+                <ImageBrush ImageSource="Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>
+            </Border.Background>
+        </Border>
+        
+        <Border Grid.Column="8" Grid.Row="2">
+            <Border.Background>
+                <ImageBrush ImageSource="racsok.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="2">
+            <Border.Background>
+                <ImageBrush ImageSource="szerencse.png" Stretch="Uniform"></ImageBrush>
+            </Border.Background>
+        </Border>
     </Grid>
 </Window>
