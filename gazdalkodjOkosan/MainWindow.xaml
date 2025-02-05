@@ -176,6 +176,7 @@
             </Border.Background>-->
         </Border>
 
+        <Label Name="lblDice" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="..."/>
         <Button Name="btnDice" Grid.Row="0" Grid.Column="6" Content="Dobas" Click="btnDice_Click"/>
 
     </Grid>
