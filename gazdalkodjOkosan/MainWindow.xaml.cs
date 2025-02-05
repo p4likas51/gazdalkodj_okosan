@@ -18,7 +18,9 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class MainWindow : Window
     {
+        double ROUND = 1;
         Player player1 = new Player("player1", Brushes.Red);
+        Player player2 = new Player("player2", Brushes.Blue);
         public MainWindow()
         {
             InitializeComponent();
@@ -55,6 +57,10 @@ namespace gazdalkodjOkosan
                 Grid.SetRow(player1.Shape, player1.Row);
                 Grid.SetColumn(player1.Shape, player1.Column);
 
+                GameGrid.Children.Add(player2.Shape);
+                Grid.SetRow(player2.Shape, player2.Row);
+                Grid.SetColumn(player2.Shape, player2.Column);
+
                 foreach (var kep in kepek)
                 {
                     var path = System.IO.Path.Combine(Environment.CurrentDirectory, kep.Value);
@@ -63,16 +69,28 @@ namespace gazdalkodjOkosan
                 }
             };
         }
-        private void UpdatePlayerPosition()
+        private void UpdatePlayerPosition(Player player)
         {
             // Set the Grid.Row and Grid.Column properties for the player's position
-            Grid.SetRow(player1.Shape, player1.Row);
-            Grid.SetColumn(player1.Shape, player1.Column);
+            Grid.SetRow(player.Shape, player.Row);
+            Grid.SetColumn(player.Shape, player.Column);
         }
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {
-            player1.MovePlayer(); // Update player's grid position
-            UpdatePlayerPosition(); // Update the position on the grid
+
+            if (ROUND % 2 == 1)
+            {
+                player1.MovePlayer(); // Update player's grid position
+                UpdatePlayerPosition(player1); // Update the position on the grid
+                lblDice.Content = $"Piros játékos dobása: {player1.DiceRoll}";
+            }
+            else
+            {
+                player2.MovePlayer(); // Update player's grid position
+                UpdatePlayerPosition(player2); // Update the position on the grid
+                lblDice.Content = $"Kék játékos dobása: {player2.DiceRoll}";
+            }
+            ROUND++;
         }
     }
 }
