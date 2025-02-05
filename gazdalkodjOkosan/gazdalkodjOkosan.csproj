@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Ikea_logo.svg.png" />
+    <None Remove="racsok.jpg" />
+    <None Remove="szerencse.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ikea_logo.svg.png" />
+    <Resource Include="racsok.jpg" />
+    <Resource Include="szerencse.png" />
+  </ItemGroup>
+
 </Project>

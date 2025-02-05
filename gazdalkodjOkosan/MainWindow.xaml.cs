@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,11 @@ namespace gazdalkodjOkosan
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += (sender, e) =>
+            {
+
+            };
         }
     }
 }

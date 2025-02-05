@@ -46,20 +46,20 @@
 
         <Border Grid.Column="1" Grid.Row="4">
             <Border.Background>
-                <ImageBrush ImageSource="Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>
+                <ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>
             </Border.Background>
         </Border>
         
-        <Border Grid.Column="8" Grid.Row="2">
+        <!--<Border Grid.Column="8" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="racsok.jpg" Stretch="Fill"></ImageBrush>
+                <ImageBrush ImageSource="pack://application:,,,/racsok.jpg" Stretch="Fill"></ImageBrush>
             </Border.Background>
-        </Border>
+        </Border>-->
 
-        <Border Grid.Column="6" Grid.Row="2">
+        <!--<Border Grid.Column="6" Grid.Row="2">
             <Border.Background>
-                <ImageBrush ImageSource="szerencse.png" Stretch="Uniform"></ImageBrush>
+                <ImageBrush ImageSource="pack://application:,,,/szerencse.png" Stretch="Uniform"></ImageBrush>
             </Border.Background>
-        </Border>
+        </Border>-->
     </Grid>
 </Window>
