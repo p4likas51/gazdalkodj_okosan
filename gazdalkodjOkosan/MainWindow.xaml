@@ -34,17 +34,28 @@
             <RowDefinition></RowDefinition>
             
         </Grid.RowDefinitions>
-
+        <Label Name="lblSzoveg" Grid.Row="0" Grid.Column="8" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
         <Label Grid.Row="2" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="8" Content="X"/>
         <Label Grid.Row="2" Grid.Column="8" Content="X"/>
 
-        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
-        <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
+        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="White" Fill="Transparent" StrokeThickness="3"/>
+        <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="White" Fill="Transparent" StrokeThickness="3"/>
 
+
+
+
+        <Border Grid.Column="1" Grid.Row="2" Name="borderStart">
+            <!--<Border.Background>-->
+            <!--<ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>-->
+            <!--</Border.Background>-->
+        </Border>
         
         
+        
+
+
 
         <Border Grid.Column="1" Grid.Row="4" Name="borderIkea">
             <!--<Border.Background>-->
@@ -134,9 +145,21 @@
                 <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
             </Border.Background>-->
         </Border>
+        <Border Grid.Column="2" Grid.Row="7" Name="borderTropicarium">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="5" Grid.Row="2" Name="borderStadion">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
 
-        
-        
+
+
+
+
 
         <Border Grid.Column="3" Grid.Row="7" Name="borderJatekbolt">
             <!--<Border.Background>
@@ -171,6 +194,25 @@
 
 
         <Border Grid.Column="1" Grid.Row="3" Name="borderRablas">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="7" Grid.Row="7" Name="borderMadar">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+
+
+
+        <Border Grid.Column="1" Grid.Row="5" Name="borderLotto">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="7" Grid.Row="2" Name="borderTarca">
             <!--<Border.Background>
                 <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
             </Border.Background>-->
