@@ -23,6 +23,7 @@ A "Gazdálkodj Okosan" egy szórakoztató társasjáték, amelyben két játéko
     - Különböző pénzvesztő mezők
     - Különböző jutalom mezők
     - Katasztrófa mezők
+    - "Üres" mezők (pl.:állatkert)
 
 - **Cél:**
   - A játékosoknak meg kell tölteniük a házukat mind a 8 berendezéssel.
