@@ -18,6 +18,7 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class MainWindow : Window
     {
+        Player player1 = new Player("player1", Brushes.Red);
         public MainWindow()
         {
             InitializeComponent();
@@ -50,8 +51,21 @@ namespace gazdalkodjOkosan
 
             Loaded += (sender, e) =>
             {
-
+                GameGrid.Children.Add(player1.Shape);
+                Grid.SetRow(player1.Shape, player1.Row);
+                Grid.SetColumn(player1.Shape, player1.Column);
             };
+        }
+        private void UpdatePlayerPosition()
+        {
+            // Set the Grid.Row and Grid.Column properties for the player's position
+            Grid.SetRow(player1.Shape, player1.Row);
+            Grid.SetColumn(player1.Shape, player1.Column);
+        }
+        private void btnDice_Click(object sender, RoutedEventArgs e)
+        {
+            player1.MovePlayer(); // Update player's grid position
+            UpdatePlayerPosition(); // Update the position on the grid
         }
     }
 }

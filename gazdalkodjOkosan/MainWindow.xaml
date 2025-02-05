@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:gazdalkodjOkosan"
         mc:Ignorable="d"
         Title="MainWindow" Height="1000" Width="1920" FontSize="40">
-    <Grid>
+    <Grid Name="GameGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="160"></ColumnDefinition>
@@ -175,6 +175,8 @@
                 <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
             </Border.Background>-->
         </Border>
+
+        <Button Name="btnDice" Grid.Row="0" Grid.Column="6" Content="Dobas" Click="btnDice_Click"/>
 
     </Grid>
 </Window>
