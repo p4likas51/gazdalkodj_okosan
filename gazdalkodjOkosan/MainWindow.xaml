@@ -43,23 +43,138 @@
         <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
         <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
 
+        
+        
 
-        <Border Grid.Column="1" Grid.Row="4">
-            <Border.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>
-            </Border.Background>
+        <Border Grid.Column="1" Grid.Row="4" Name="borderIkea">
+            <!--<Border.Background>-->
+                <!--<ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>-->
+            <!--</Border.Background>-->
+        </Border>
+        <Border Grid.Column="8" Grid.Row="7" Name="borderIkea2">
+            <!--<Border.Background>-->
+            <!--<ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>-->
+            <!--</Border.Background>-->
         </Border>
         
-        <!--<Border Grid.Column="8" Grid.Row="2">
-            <Border.Background>
-                <ImageBrush ImageSource="pack://application:,,,/racsok.jpg" Stretch="Fill"></ImageBrush>
-            </Border.Background>
-        </Border>-->
+        
+        
 
-        <!--<Border Grid.Column="6" Grid.Row="2">
-            <Border.Background>
+        <Border Grid.Column="8" Grid.Row="2" Name="borderRacsok">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/racsok.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        
+        
+        
+        
+
+        <Border Grid.Column="6" Grid.Row="2" Name="borderSzerencse">
+            <!--<Border.Background>
                 <ImageBrush ImageSource="pack://application:,,,/szerencse.png" Stretch="Uniform"></ImageBrush>
-            </Border.Background>
-        </Border>-->
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="4" Grid.Row="7" Name="borderSzerencse2">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/szerencse.png" Stretch="Uniform"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="1" Grid.Row="6" Name="borderSzerencse3">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/szerencse.png" Stretch="Uniform"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="8" Grid.Row="6" Name="borderSzerencse4">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/szerencse.png" Stretch="Uniform"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        
+        
+        
+
+        <Border Grid.Column="6" Grid.Row="7" Name="borderHazvasarlas">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="3" Grid.Row="2" Name="borderAutovasarlas">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        
+        
+        
+        
+
+        <Border Grid.Column="8" Grid.Row="3" Name="borderBiztositas1">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        <Border Grid.Column="2" Grid.Row="2" Name="borderBiztositas2">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+
+
+
+        <Border Grid.Column="8" Grid.Row="5" Name="borderAllatkert">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="7" Name="borderVidampark">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+        
+        
+
+        <Border Grid.Column="3" Grid.Row="7" Name="borderJatekbolt">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+
+
+
+
+        <Border Grid.Column="4" Grid.Row="2" Name="borderMav">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+        <Border Grid.Column="5" Grid.Row="7" Name="borderHev">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+        
+        <Border Grid.Column="8" Grid.Row="4" Name="borderBkv">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
+
+
+
+
+        <Border Grid.Column="1" Grid.Row="3" Name="borderRablas">
+            <!--<Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
+            </Border.Background>-->
+        </Border>
+
     </Grid>
 </Window>

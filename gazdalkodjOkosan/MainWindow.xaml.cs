@@ -17,13 +17,46 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
 
+            Dictionary<Border, string> kepek = new Dictionary<Border, string>()
+            {
+                { borderIkea, "Ikea_logo.svg.png" },
+                { borderIkea2, "Ikea_logo.svg.png" },
+                { borderRacsok, "racsok.jpg" },
+                { borderSzerencse, "szerencse.png" },
+                { borderSzerencse2, "szerencse.png" },
+                { borderSzerencse3, "szerencse.png" },
+                { borderSzerencse4, "szerencse.png" },
+                { borderHazvasarlas, "hazvasarlas.jpg" },
+                { borderAutovasarlas, "autovasarlas.jpg" },
+                { borderBiztositas1, "hazbiztositas.jpg" },
+                { borderBiztositas2, "autobiztositas.jfif" },
+                { borderAllatkert, "allatkert.jpg" },
+                { borderVidampark, "vidampark.jpg" },
+                { borderJatekbolt, "regio.png" },
+                { borderMav, "máv-logo(utazó mező).png" },
+                { borderHev, "hev.png" },
+                { borderBkv, "bkv.png" },
+                { borderRablas, "kiraboltak-bunozo(penzveszto mezo).png" },
+
+
+
+
+            };
+
             Loaded += (sender, e) =>
             {
-
+                foreach (var kep in kepek)
+                {
+                    var path = System.IO.Path.Combine(Environment.CurrentDirectory, kep.Value);
+                    ImageSource src = new BitmapImage(new Uri(path));
+                    kep.Key.Background = new ImageBrush(src);
+                }
             };
         }
     }
