@@ -1,0 +1,18 @@
+Házvásárlás - 1 kesz
+Berendezések vásárlása -2 kesz
+Autóvásárlás - 1 kesz
+Biztosítás mezők (autó, lakás, egyéb tárgyak) -2 kesz
+Szerencsekártya mezők - 4 kesz
+Utazómezők (pl. vonat, villamos) - 3 kesz
+Játékbolt (pl. LEGO) -1 kesz
+Különböző pénzvesztő mezők - 2
+Különböző jutalom mezők - 3
+Ures mezok(pl.: allatkert) - 2 kesz
+Katasztrófa mezők -2
+
+1-3
+1-5
+2-7
+7-7
+5-2
+7-2

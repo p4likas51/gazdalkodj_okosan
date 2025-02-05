@@ -54,6 +54,13 @@ namespace gazdalkodjOkosan
                 GameGrid.Children.Add(player1.Shape);
                 Grid.SetRow(player1.Shape, player1.Row);
                 Grid.SetColumn(player1.Shape, player1.Column);
+
+                foreach (var kep in kepek)
+                {
+                    var path = System.IO.Path.Combine(Environment.CurrentDirectory, kep.Value);
+                    ImageSource src = new BitmapImage(new Uri(path));
+                    kep.Key.Background = new ImageBrush(src);
+                }
             };
         }
         private void UpdatePlayerPosition()
