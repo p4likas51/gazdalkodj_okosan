@@ -20,6 +20,7 @@ namespace gazdalkodjOkosan
         public int Row { get; set; }
         public int Column { get; set; }
         public int DiceRoll { get; set; }
+        private int Step {  get; set; }
 
         public Player(string name, Brush playerColor, int startingBalance = 10000)
         {
@@ -39,35 +40,23 @@ namespace gazdalkodjOkosan
             Column = 1;
 
         }
-
-        public void AddItem(string item)
-        {
-            Items.Add(item);
-        }
-
-        public void RemoveItem(string item)
-        {
-            Items.Remove(item);
-        }
-
-        public void AdjustBalance(int amount)
-        {
-            Balance += amount;
-        }
         public void MovePlayer()
         {
-            // Simulate a dice roll (1 to 6)
             Random random = new Random();
-            DiceRoll = random.Next(1, 7); // Rolls a number between 1 and 6
-            
-            // Update the player's position
+            DiceRoll = random.Next(1, 7);
+
             for (int i = 0; i < DiceRoll; i++)
             {
                 if (Row == 2 && Column < 8) Column++;
                 else if (Column == 8 && Row < 7) Row++;
                 else if (Row == 7 && Column > 1) Column--;
                 else if (Column == 1 && Row > 2) Row--;
-                
+            }
+            Step += DiceRoll;
+            if (Step >= 24)
+            {
+                Balance += 5000;
+                Step = Step - 24;
             }
         }
 

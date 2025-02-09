@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace gazdalkodjOkosan
 {
@@ -19,6 +20,8 @@ namespace gazdalkodjOkosan
     public partial class MainWindow : Window
     {
         double ROUND = 1;
+        bool carInsurance = false;
+        bool houseInsurance = false;
         Player player1 = new Player("player1", Brushes.Red);
         Player player2 = new Player("player2", Brushes.Blue);
         public MainWindow()
@@ -44,11 +47,7 @@ namespace gazdalkodjOkosan
                 { borderMav, "máv-logo(utazó mező).png" },
                 { borderHev, "hev.png" },
                 { borderBkv, "bkv.png" },
-                { borderRablas, "kiraboltak-bunozo(penzveszto mezo).png" },
-
-
-
-
+                { borderRablas, "rablas.jpg" },
             };
 
             Loaded += (sender, e) =>
@@ -63,32 +62,87 @@ namespace gazdalkodjOkosan
 
                 foreach (var kep in kepek)
                 {
-                    var path = System.IO.Path.Combine(Environment.CurrentDirectory, kep.Value);
-                    ImageSource src = new BitmapImage(new Uri(path));
+                    var path = System.IO.Path.Combine(Environment.CurrentDirectory, "images", kep.Value);
+                    ImageSource src = new BitmapImage(new Uri(path, UriKind.Absolute));
                     kep.Key.Background = new ImageBrush(src);
                 }
             };
         }
         private void UpdatePlayerPosition(Player player)
         {
-            // Set the Grid.Row and Grid.Column properties for the player's position
             Grid.SetRow(player.Shape, player.Row);
             Grid.SetColumn(player.Shape, player.Column);
+        }
+        private void updateBalance()
+        {
+            lblp1Balance.Foreground = Brushes.Red;
+            lblp1Balance.Content = $"{player1.Balance}Ft";
+            lblp2Balance.Foreground = Brushes.Blue;
+            lblp2Balance.Content = $"{player2.Balance}Ft";
+        }
+        private void PlayARound(Player player)
+        {
+            lblActionText.Content = "";
+            lblAction.Content = "";
+            player.MovePlayer();
+            UpdatePlayerPosition(player);
+            lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
+            var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
+            lblSzoveg.Content = element.Name;
+            FieldActions(element, player);
+            updateBalance();
+        }
+
+        public void FieldActions(FrameworkElement currentPosition, Player player)
+        {
+            if (currentPosition.Name == "borderRablas")
+            {
+                if (player.Balance <= 10000) player.Balance = 0;
+                else player.Balance -= 10000;
+                lblActionText.Content = "Rabló mezőre léptél:";
+                lblAction.Content = "-10000Ft";
+            }
         }
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {
 
             if (ROUND % 2 == 1)
             {
-                player1.MovePlayer(); // Update player's grid position
-                UpdatePlayerPosition(player1); // Update the position on the grid
-                lblDice.Content = $"Piros játékos dobása: {player1.DiceRoll}";
+                var currentPosition = Table.FindElementInGrid(GameGrid, player1.Row, player1.Column);
+                lblProba.Content = $"volt pozi: {currentPosition.Name}";
+                if (currentPosition.Name != "borderRacsok")
+                {
+                    PlayARound(player1);
+                }
+                else
+                {
+                    Jail jailwindow = new Jail(player1);
+                    jailwindow.ShowDialog();
+                    if (jailwindow.OutOfJail == true)
+                    {
+                        PlayARound(player1);
+                    }
+                }
+
             }
             else
             {
-                player2.MovePlayer(); // Update player's grid position
-                UpdatePlayerPosition(player2); // Update the position on the grid
-                lblDice.Content = $"Kék játékos dobása: {player2.DiceRoll}";
+                var currentPosition = Table.FindElementInGrid(GameGrid, player2.Row, player2.Column);
+                lblProba.Content = $"volt pozi: {currentPosition.Name}";
+                if (currentPosition.Name != "borderRacsok")
+                {
+                    PlayARound(player2);
+                }
+                else
+                {
+                    Jail jailwindow = new Jail(player2);
+                    jailwindow.ShowDialog();
+                    if (jailwindow.OutOfJail == true)
+                    {
+                        PlayARound(player2);
+                    }
+                }
+                    
             }
             ROUND++;
         }
