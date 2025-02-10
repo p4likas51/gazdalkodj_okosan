@@ -1,0 +1,23 @@
+﻿<Window x:Class="gazdalkodjOkosan.images.LuckyCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gazdalkodjOkosan.images"
+        mc:Ignorable="d"
+        Title="LuckyCard" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">Szerencsekártya</Label>
+
+        <Label Grid.Row="1" FontSize="13" HorizontalAlignment="Center">Húzz egy kártyát!</Label>
+        <Button Name="Btn_LuckyCard" Grid.Row="1" Width="70px" Height="40px" Content="Húzás" Click="Btn_LuckyCard_Click"></Button>
+
+        <Label Name="LuckyText"></Label>
+    </Grid>
+</Window>

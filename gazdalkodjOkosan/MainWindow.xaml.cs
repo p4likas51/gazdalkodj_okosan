@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using gazdalkodjOkosan.images;
+using System.IO;
 using System.Numerics;
 using System.Text;
 using System.Windows;
@@ -111,7 +112,37 @@ namespace gazdalkodjOkosan
                 lblActionText.Content = "Rabló mezőre léptél:";
                 lblAction.Content = "-10000Ft";
             }
+
+            if (currentPosition.Name == "borderSzerencse")
+            {
+                LuckyCard window = new LuckyCard(player);
+                window.ShowDialog();
+            }
+
+            if (currentPosition.Name == "borderAllatkert")
+            {
+                lblActionText.Content = "A családdal elmentetek a helyi állatkertbe. Jó szórakozást!";
+            }
+
+            if (currentPosition.Name == "borderVidampark")
+            {
+                lblActionText.Content = "A barátaiddal elmentetek a Family Parkba. Jó szórakozást!";
+            }
+
+            if (currentPosition.Name == "borderTropicarium")
+            {
+                lblActionText.Content = "Cápales! Figyeljétek meg a különböző egzotikus fajokat!";
+            }
+
+            if (currentPosition.Name == "borderStadion")
+            {
+                lblActionText.Content = "Fradi - Videoton. Vesszen a Ferencváros!";
+            }
+
+
         }
+
+
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {
 
