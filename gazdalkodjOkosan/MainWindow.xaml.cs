@@ -20,8 +20,6 @@ namespace gazdalkodjOkosan
     public partial class MainWindow : Window
     {
         double ROUND = 1;
-        bool carInsurance = false;
-        bool houseInsurance = false;
         Player player1 = new Player("player1", Brushes.Red);
         Player player2 = new Player("player2", Brushes.Blue);
         public MainWindow()
@@ -104,12 +102,29 @@ namespace gazdalkodjOkosan
 
         public void FieldActions(FrameworkElement currentPosition, Player player)
         {
+            if (currentPosition.Name == "borderBiztositas2")
+            {
+                CarInsurance carInsuranceWindow = new CarInsurance(player);
+            }
             if (currentPosition.Name == "borderRablas")
             {
                 if (player.Balance <= 10000) player.Balance = 0;
                 else player.Balance -= 10000;
                 lblActionText.Content = "Rabló mezőre léptél:";
                 lblAction.Content = "-10000Ft";
+            }
+            if (currentPosition.Name == "borderMadar")
+            {
+                if (player.Balance <= 1000) player.Balance = 0;
+                else player.Balance -= 1000;
+                lblActionText.Content = "Leszart egy madár, el kell vinned a kabátod a tisztítóba";
+                lblAction.Content = "-1000Ft";
+            }
+            if (currentPosition.Name == "borderTarca")
+            {
+                player.Balance += 3000;
+                lblActionText.Content = "Találtál egy tárcát a földön";
+                lblAction.Content = "+3000Ft";
             }
         }
         private void btnDice_Click(object sender, RoutedEventArgs e)

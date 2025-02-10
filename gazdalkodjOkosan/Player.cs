@@ -21,6 +21,8 @@ namespace gazdalkodjOkosan
         public int Column { get; set; }
         public int DiceRoll { get; set; }
         private int Step {  get; set; }
+        public bool CarInsurance = false;
+        public bool HouseInsurance = false;
 
         public Player(string name, Brush playerColor, int startingBalance = 10000)
         {
