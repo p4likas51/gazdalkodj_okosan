@@ -48,6 +48,15 @@ namespace gazdalkodjOkosan
                 { borderHev, "hev.png" },
                 { borderBkv, "bkv.png" },
                 { borderRablas, "rablas.jpg" },
+                { borderTarca, "tarca.jpg" },
+                { borderTropicarium, "tropicarium.png" },
+                { borderStadion, "stadion.jpg" },
+                { borderLotto, "lotto.jfif" },
+                { borderStart, "start.png" },
+                { borderMadar, "madarszar.jpg" },
+
+
+
             };
 
             Loaded += (sender, e) =>

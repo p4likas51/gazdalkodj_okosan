@@ -44,7 +44,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="images\autobiztositas.jfif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="images\autovasarlas.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
