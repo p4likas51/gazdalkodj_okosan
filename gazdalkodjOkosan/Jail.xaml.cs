@@ -24,8 +24,8 @@ namespace gazdalkodjOkosan
         public Player Player { get; private set; }
         public Jail(Player player)
         {
-            Player = player;
             InitializeComponent();
+            Player = player;
             if (Player.Balance >= amount) btnPayJail.IsEnabled = true;
             lblAmount.Content = $"-{amount}Ft";
         }

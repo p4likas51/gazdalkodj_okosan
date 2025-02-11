@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gazdalkodjOkosan"
         mc:Ignorable="d"
-        Title="CarInsurance" Height="450" Width="800">
+        Title="CarInsurance" Height="450" Width="800" FontSize="40">
     <Grid>
-        
+        <Label Name="lblTitle" Content="Gépjármű biztosítás" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
+        <Button Name="btnCarInsurance" Width="120px" Height="50px" Margin="300 0 0 0" Content="Vétel" FontSize="20px" Click="btnCarInsurance_Click" IsEnabled="False"/>
+        <Label Name="lblCarInsurance" Content="Biztosítás:" VerticalAlignment="Center" Width="190px" Margin="0 0 300 0"/>
+        <Label Name="lblAmount" Content="..." HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300 100 0 0"/>
+        <Button Name="btnExit" Width="120px" Height="50px" Margin="0 300 0 0" Content="Kilépés" FontSize="20px" Click="btnExit_Click"/>
     </Grid>
 </Window>

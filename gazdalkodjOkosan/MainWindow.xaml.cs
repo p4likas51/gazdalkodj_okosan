@@ -97,6 +97,7 @@ namespace gazdalkodjOkosan
             lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
             lblSzoveg.Content = element.Name;
+            updateBalance();
             FieldActions(element, player);
             updateBalance();
         }
@@ -105,7 +106,29 @@ namespace gazdalkodjOkosan
         {
             if (currentPosition.Name == "borderBiztositas2")
             {
-                CarInsurance carInsuranceWindow = new CarInsurance(player);
+                if (player.CarInsurance == true)
+                {
+                    lblActionText.Content = "Már van gépjármű biztosításod!";
+                }
+                else
+                {
+                    CarInsurance carInsuranceWindow = new CarInsurance(player, "car");
+                    carInsuranceWindow.ShowDialog();
+                }
+
+            }
+            if (currentPosition.Name == "borderBiztositas1")
+            {
+                if (player.HouseInsurance == true)
+                {
+                    lblActionText.Content = "Már van házbiztosításod!";
+                }
+                else
+                {
+                    CarInsurance carInsuranceWindow = new CarInsurance(player, "house");
+                    carInsuranceWindow.ShowDialog();
+                }
+                
             }
             if (currentPosition.Name == "borderRablas")
             {
@@ -115,7 +138,7 @@ namespace gazdalkodjOkosan
                 lblAction.Content = "-10000Ft";
             }
 
-            if (currentPosition.Name == "borderSzerencse")
+            if (currentPosition.Name.StartsWith("borderSzerencse"))
             {
                 LuckyCard window = new LuckyCard(player);
                 window.ShowDialog();
@@ -141,10 +164,6 @@ namespace gazdalkodjOkosan
                 lblActionText.Content = "Fradi - Videoton. Vesszen a Ferencváros!";
             }
 
-
-        }
-
-
             if (currentPosition.Name == "borderMadar")
             {
                 if (player.Balance <= 1000) player.Balance = 0;
@@ -158,7 +177,9 @@ namespace gazdalkodjOkosan
                 lblActionText.Content = "Találtál egy tárcát a földön";
                 lblAction.Content = "+3000Ft";
             }
+
         }
+
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {
 
