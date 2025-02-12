@@ -21,13 +21,17 @@ namespace gazdalkodjOkosan
     {
         private double Amount;
         public Player Player;
-        public CarMarket(Player player)
+        public string Item { get; set; }
+        public CarMarket(Player player, string item)
         {
             InitializeComponent();
             Player = player;
+            Item = item;
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
-                {borderCar, "auto.png" }
+                {borderCar, "auto.png" },
+                {borderHouse, "haz.jpg" }
+                
             };
             Loaded += (sender, e) =>
             {
@@ -38,9 +42,22 @@ namespace gazdalkodjOkosan
                     kep.Key.Background = new ImageBrush(src);
                 }
             };
-            Amount = player.ItemPrices["car"];
-            lblCarBuy.Content = $"Összeg: -{Amount}Ft";
-            if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
+            if (Item == "car")
+            {
+                borderHouse.Visibility = Visibility.Collapsed;
+                lblTitle.Content = "Autó vásárlás";
+                Amount = player.ItemPrices["car"];
+                lblCarBuy.Content = $"Összeg: -{Amount}Ft";
+                if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
+            }
+            if (Item == "house")
+            {
+                borderCar.Visibility = Visibility.Collapsed;
+                lblTitle.Content = "Ház vásárlás";
+                Amount = player.ItemPrices["house"];
+                lblCarBuy.Content = $"Összeg: -{Amount}Ft";
+                if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
+            }
         }
 
         private void btnCarBuy_Click(object sender, RoutedEventArgs e)
@@ -48,7 +65,9 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Player.Balance -= Amount;
-            Player.ItemStatus["car"] = true;
+            if (Item == "car") Player.ItemStatus["car"] = true;
+            if (Item == "house") Player.ItemStatus["house"] = true;
+
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)

@@ -102,7 +102,21 @@ namespace gazdalkodjOkosan
             updateBalance();
         }
 
-        public void FieldActions(FrameworkElement currentPosition, Player player)
+        private void PlayARound(Player player, int step)
+        {
+            lblActionText.Content = "";
+            lblAction.Content = "";
+            player.MovePlayer(step);
+            UpdatePlayerPosition(player);
+            lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
+            var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
+            lblSzoveg.Content = element.Name;
+            updateBalance();
+            FieldActions(element, player);
+            updateBalance();
+        }
+
+        public async void FieldActions(FrameworkElement currentPosition, Player player)
         {
             if (currentPosition.Name == "borderBiztositas2")
             {
@@ -132,7 +146,33 @@ namespace gazdalkodjOkosan
             }
             if (currentPosition.Name == "borderAutovasarlas")
             {
-                CarMarket carMarketWindow = new CarMarket(player);
+                CarMarket carMarketWindow = new CarMarket(player, "car");
+                carMarketWindow.ShowDialog();
+            }
+            if (currentPosition.Name == "borderMav")
+            {
+                lblActionText.Content = "Elvonatozol az állatkertbe";
+                await Task.Delay(2000);
+                PlayARound(player, 7);
+                
+            }
+            if (currentPosition.Name == "borderHev")
+            {
+                lblActionText.Content = "Elvonatozol a vidámparkba";
+                await Task.Delay(2000);
+                PlayARound(player, 4);
+
+            }
+            if (currentPosition.Name == "borderBkv")
+            {
+                lblActionText.Content = "Elvonatozol a tropicáriumba";
+                await Task.Delay(2000);
+                PlayARound(player, 9);
+
+            }
+            if (currentPosition.Name == "borderHazvasarlas")
+            {
+                CarMarket carMarketWindow = new CarMarket(player, "house");
                 carMarketWindow.ShowDialog();
             }
             if (currentPosition.Name == "borderRablas")
