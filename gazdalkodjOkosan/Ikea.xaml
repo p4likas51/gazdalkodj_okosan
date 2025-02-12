@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="Ikea" Height="450" Width="800">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/images/ikeabelter.jpg"/>
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -21,8 +18,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Border Name="Ikeabackground" Grid.ColumnSpan="3" Grid.RowSpan="3"></Border>
 
-        <Label Grid.Row="0" Grid.Column="0" Padding="30"  Grid.ColumnSpan="3" Content="IKEA" FontSize="60" FontWeight="Black" HorizontalAlignment="Center" Background="#FF3336D8" Foreground="#FFFFD43D" ></Label>
+
+        <Label Grid.Row="0" Grid.Column="0" Padding="30"  Grid.ColumnSpan="3" Content="IKEA" FontSize="60" FontWeight="Black" HorizontalAlignment="Center" Background="#FF3336D8" Foreground="#FFFFD43D"></Label>
 
         <Label Grid.Row="1" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" FontSize="25" FontWeight="Bold" Foreground="White" Background="#99000000" >Kanapé</Label>
 
