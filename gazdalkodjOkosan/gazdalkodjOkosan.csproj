@@ -177,10 +177,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Page Update="images\LuckyCard.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-  </ItemGroup>
-
 </Project>

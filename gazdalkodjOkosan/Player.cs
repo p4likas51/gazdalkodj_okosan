@@ -13,6 +13,7 @@ namespace gazdalkodjOkosan
 {
     public class Player
     {
+        public bool RepairTool {  get; set; }
         public double DiscountCar { get; set; }
         public double DiscountItems { get; set; }
         public double DiscountHouse { get; set; }
@@ -29,11 +30,10 @@ namespace gazdalkodjOkosan
         public Dictionary<string, double> ItemPrices;
 
         private int Step {  get; set; }
-        public bool CarInsurance = false;
-        public bool HouseInsurance = false;
 
         public Player(string name, Brush playerColor, int startingBalance = 200000)
         {
+            RepairTool = false;
             ItemStatus = new Dictionary<string, bool>()
             {
                 {"house", false },

@@ -1,5 +1,4 @@
-﻿using gazdalkodjOkosan.images;
-using System.IO;
+﻿using System.IO;
 using System.Numerics;
 using System.Text;
 using System.Windows;
@@ -20,9 +19,10 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool OUT = false;
         double ROUND = 1;
-        Player player1 = new Player("player1", Brushes.Red);
-        Player player2 = new Player("player2", Brushes.Blue);
+        Player player1 = new Player("Piros", Brushes.Red);
+        Player player2 = new Player("Kék", Brushes.Blue);
         public MainWindow()
         {
             InitializeComponent();
@@ -148,9 +148,10 @@ namespace gazdalkodjOkosan
             lblAction.Content = "";
             player.MovePlayer();
             UpdatePlayerPosition(player);
-            lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
+            lblDice.Content = $"{player.Name} : {player.DiceRoll}";
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
-            lblSzoveg.Content = element.Name;
+            lblCarInsurance.Content = $"{player.Name} : {player.ItemStatus["carInsurance"]}";
+            lblHouseInsurance.Content = $"{player.Name} : {player.ItemStatus["houseInsurance"]}";
             updateBalance();
             FieldActions(element, player);
             updateBalance();
@@ -165,7 +166,8 @@ namespace gazdalkodjOkosan
             UpdatePlayerPosition(player);
             lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
-            lblSzoveg.Content = element.Name;
+            lblCarInsurance.Content = $"{player}: {player.ItemStatus["carInsurance"]}";
+            lblHouseInsurance.Content = $"{player}: {player.ItemStatus["houseInsurance"]}";
             updateBalance();
             FieldActions(element, player);
             updateBalance();
@@ -183,6 +185,7 @@ namespace gazdalkodjOkosan
                 {
                     CarInsurance carInsuranceWindow = new CarInsurance(player, "car");
                     carInsuranceWindow.ShowDialog();
+                    MessageBox.Show($"{player.ItemStatus["carInsurance"]}");
                 }
 
             }
@@ -238,11 +241,12 @@ namespace gazdalkodjOkosan
                 lblAction.Content = "-10000Ft";
             }
 
-            //if (currentPosition.Name.StartsWith("borderSzerencse"))
-            //{
-            //    LuckyCard window = new LuckyCard(player);
-            //    window.ShowDialog();
-            //}
+            if (currentPosition.Name.StartsWith("borderSzerencse"))
+            {
+                LuckyCards window = new LuckyCards(player);
+                window.ShowDialog();
+                if (window.PlusRound == true) ROUND++;
+            }
 
             if (currentPosition.Name == "borderIkea")
             {
@@ -299,93 +303,12 @@ namespace gazdalkodjOkosan
 
         }
 
-        private void invest(int amount, Player player)
-        {
-            player.Balance += amount;
-            lblActionText.Content = "Befektetésed jól sikerült! Kapsz 6000 Ft-ot.";
-
-        }
-
-
-
-        private void CarDiscount(int amount, Player player)
-        {
-            player.DiscountCar = amount;
-            lblActionText.Content = "Autóvásárlási akció! A következő autóvásárlásnál 2000 Ft kedvezményt kapsz.";
-        }
-
-        private void Promotion(int amount, Player player)
-        {
-            player.Bonus = amount;
-            lblActionText.Content = "Előléptettek, így extra fizetést kapsz!";
-
-        }
-
-        private void LessBonus(int amount, Player player)
-        {
-            player.Bonus = amount;
-            lblActionText.Content = "Új kormányrendelet miatt csökkent a pályakezdő támogatásod!";
-        }
-
-        private void Taxes(int amount, Player player)
-        {
-            player.Balance -= amount;
-            lblActionText.Content = "Váratlan adófizetés! Elfelejtett számlád van. Fizess 2500 Ft-ot.";
-        }
-
-        private void wonPrize(int amount, Player player)
-        {
-            player.Balance += amount;
-            lblActionText.Content = "Jótékonysági tombola fődíját megnyerted!";
-        }
-
-        private void missingRound(int amount, Player player)
-        {
-            
-        }
-
-        private void WorkerOfTheYear(int amount, Player player)
-        {
-            player.Balance += amount;
-            lblActionText.Content = "Megnyerted az év dolgozója díjat! Kapsz 5000 Ft jutalmat.";
-        }
-
-        private void moneyGetBack(int amount, Player player)
-        {
-            player.Balance += amount;
-            lblActionText.Content = "Visszatérítés a biztosítótól! Kapsz 2500 Ft-ot.";
-        }
-
-        private void freeHouseInsurance(int amount, Player player)
-        {
-            lblActionText.Content = "Ingyen lakásbiztosítás!";
-
-            if (player.HouseInsurance == false)
-            {
-                player.HouseInsurance = true;
-            }
-            else
-            {
-                lblActionText.Content = "Már van lakásbiztosításod.";
-            }
-        }
-
-        private void Coupons(int amount, Player player)
-        {
-            player.DiscountItems = 0.8;
-            player.DiscountCar = 0.9;
-            player.DiscountHouse = 0.9;
-            lblActionText.Content = "KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!";
-        }
-
-
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {
 
             if (ROUND % 2 == 1)
             {
                 var currentPosition = Table.FindElementInGrid(GameGrid, player1.Row, player1.Column);
-                lblProba.Content = $"volt pozi: {currentPosition.Name}";
                 if (currentPosition.Name != "borderRacsok")
                 {
                     PlayARound(player1);
@@ -404,7 +327,6 @@ namespace gazdalkodjOkosan
             else
             {
                 var currentPosition = Table.FindElementInGrid(GameGrid, player2.Row, player2.Column);
-                lblProba.Content = $"volt pozi: {currentPosition.Name}";
                 if (currentPosition.Name != "borderRacsok")
                 {
                     PlayARound(player2);
