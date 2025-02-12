@@ -149,6 +149,15 @@ namespace gazdalkodjOkosan
                 window.ShowDialog();
             }
 
+            if (currentPosition.Name == "borderIkea")
+            {
+                Ikea window = new Ikea(player);
+                window.ShowDialog();
+            }
+
+
+
+
             if (currentPosition.Name == "borderAllatkert")
             {
                 lblActionText.Content = "A családdal elmentetek a helyi állatkertbe. Jó szórakozást!";
@@ -258,7 +267,9 @@ namespace gazdalkodjOkosan
 
         private void Coupons(int amount, Player player)
         {
-
+            player.DiscountItems = 0.8;
+            player.DiscountCar = 0.9;
+            player.DiscountHouse = 0.9;
             lblActionText.Content = "KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!";
         }
 
