@@ -13,9 +13,9 @@ namespace gazdalkodjOkosan
 {
     public class Player
     {
-        public int DiscountCar { get; set; }
-        public int DiscountItems { get; set; }
-        public int DiscountHouse { get; set; }
+        public double DiscountCar { get; set; }
+        public double DiscountItems { get; set; }
+        public double DiscountHouse { get; set; }
         public int Bonus { get; set; }
         public string Name { get; set; }
         public int Balance { get; set; }
@@ -26,7 +26,7 @@ namespace gazdalkodjOkosan
         public int Column { get; set; }
         public int DiceRoll { get; set; }
         public Dictionary<string, bool> ItemStatus;
-        public Dictionary<string, int> ItemPrices;
+        public Dictionary<string, double> ItemPrices;
 
         private int Step {  get; set; }
         public bool CarInsurance = false;
@@ -49,7 +49,7 @@ namespace gazdalkodjOkosan
                 {"carInsurance", false }
 
             };
-            ItemPrices = new Dictionary<string, int>()
+            ItemPrices = new Dictionary<string, double>()
             {
                 {"house", 30000 * DiscountHouse},
                 {"car", 20000 * DiscountCar},
