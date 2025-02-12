@@ -100,34 +100,49 @@ namespace gazdalkodjOkosan
             {
                 rctCar.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["tv"] == true)
+            else { rctCar.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["tv"] == true)
             {
                 rctTv.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["oven"] == true)
+            else { rctTv.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["oven"] == true)
             {
                 rctOven.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["cabinet"] == true)
+            else { rctOven.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["cabinet"] == true)
             {
                 rctCabinet.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["bed"] == true)
+            else { rctCabinet.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["bed"] == true)
             {
                 rctBed.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["lego"] == true)
+            else { rctBed.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["lego"] == true)
             {
                 rctLego.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["washingmachine"] == true)
+            else { rctLego.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["washingmachine"] == true)
             {
                 rctWashing.Visibility = Visibility.Visible;
             }
-            else if (player.ItemStatus["sofa"] == true)
+            else { rctWashing.Visibility = Visibility.Collapsed; }
+
+            if (player.ItemStatus["sofa"] == true)
             {
                 rctSofa.Visibility = Visibility.Visible;
             }
+            else { rctSofa.Visibility = Visibility.Collapsed; }
         }
 
         private void UpdatePlayerPosition(Player player)
