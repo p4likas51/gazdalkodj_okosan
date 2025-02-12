@@ -104,9 +104,10 @@ namespace gazdalkodjOkosan
 
         public void FieldActions(FrameworkElement currentPosition, Player player)
         {
+            MessageBox.Show($"{player.ItemPrices["lego"]}");
             if (currentPosition.Name == "borderBiztositas2")
             {
-                if (player.CarInsurance == true)
+                if (player.ItemStatus["carInsurance"] == true)
                 {
                     lblActionText.Content = "Már van gépjármű biztosításod!";
                 }
@@ -119,7 +120,7 @@ namespace gazdalkodjOkosan
             }
             if (currentPosition.Name == "borderBiztositas1")
             {
-                if (player.HouseInsurance == true)
+                if (player.ItemStatus["houseInsurance"] == true)
                 {
                     lblActionText.Content = "Már van házbiztosításod!";
                 }
@@ -134,6 +135,7 @@ namespace gazdalkodjOkosan
             {
                 CarMarket carMarketWindow = new CarMarket(player);
                 carMarketWindow.ShowDialog();
+                MessageBox.Show($"van auto: {player.ItemStatus["car"]}");
             }
             if (currentPosition.Name == "borderRablas")
             {

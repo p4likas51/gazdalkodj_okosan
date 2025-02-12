@@ -38,11 +38,24 @@ namespace gazdalkodjOkosan
                     kep.Key.Background = new ImageBrush(src);
                 }
             };
+            Amount = player.ItemPrices["car"];
+            lblCarBuy.Content = $"-{Amount}";
+            MessageBox.Show($"auto ara: {Amount}");
+            if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
         }
 
         private void btnCarBuy_Click(object sender, RoutedEventArgs e)
         {
+            Button btn = sender as Button;
+            btn.IsEnabled = false;
+            Player.Balance -= Amount;
+            Player.ItemStatus["car"] = true;
+        }
 
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
         }
     }
 }
