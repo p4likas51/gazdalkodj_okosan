@@ -1,0 +1,16 @@
+﻿<Window x:Class="gazdalkodjOkosan.CarMarket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gazdalkodjOkosan"
+        mc:Ignorable="d"
+        Title="CarMarket" Height="450" Width="800" FontSize="40px">
+    <Grid>
+        <Label Content="Autó vásárlás" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
+        <Border Name="borderCar" Width="200" Height="200"/>
+        <Button Name="btnCarBuy" Width="120px" Height="50px" Margin="0 250 0 0" Content="Vétel" FontSize="20px" Click="btnCarBuy_Click" IsEnabled="False"/>
+
+
+    </Grid>
+</Window>
