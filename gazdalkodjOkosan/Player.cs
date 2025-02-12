@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -13,7 +14,6 @@ namespace gazdalkodjOkosan
     public class Player
     {
         public int Sale { get; set; }
-        public int CarPrice { get; set; }
         public int Bonus { get; set; }
         public string Name { get; set; }
         public int Balance { get; set; }
@@ -23,19 +23,44 @@ namespace gazdalkodjOkosan
         public int Row { get; set; }
         public int Column { get; set; }
         public int DiceRoll { get; set; }
+        public Dictionary<string, bool> ItemStatus;
+        public Dictionary<string, int> ItemPrices;
+
         private int Step {  get; set; }
         public bool CarInsurance = false;
         public bool HouseInsurance = false;
 
         public Player(string name, Brush playerColor, int startingBalance = 10000)
         {
+            ItemStatus = new Dictionary<string, bool>()
+            {
+                {"house", false },
+                {"car", false },
+                {"tv", false },
+                {"owen", false },
+                {"cabinet", false },
+                {"bed", false },
+                {"lego", false },
+                {"washingmachine", false },
+                {"sofa", false }
+            };
+            ItemPrices = new Dictionary<string, int>()
+            {
+                {"house", 30000 },
+                {"car", 20000 },
+                {"tv", 12000 },
+                {"owen", 4000 },
+                {"cabinet", 4000 },
+                {"bed", 5000 },
+                {"lego", 2000 },
+                {"washingmachine", 5000 },
+                {"sofa", 10000 }
+            };
             Sale = 1;
-            CarPrice = 30000 * Sale;
             Name = name;
             Bonus = 0;
             PlayerColor = playerColor;
             Balance = startingBalance;
-            Items = new List<string>();
             Shape = new Ellipse()
             {
                 Width = 100,

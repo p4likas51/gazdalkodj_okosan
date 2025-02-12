@@ -9,7 +9,8 @@
     <Grid>
         <Label Content="Autó vásárlás" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
         <Border Name="borderCar" Width="200" Height="200"/>
-        <Button Name="btnCarBuy" Width="120px" Height="50px" Margin="0 250 0 0" Content="Vétel" FontSize="20px" Click="btnCarBuy_Click" IsEnabled="False"/>
+        <Button Name="btnCarBuy" Width="120px" Height="50px" Margin="200 250 0 0" Content="Vétel" FontSize="20px" Click="btnCarBuy_Click" IsEnabled="False"/>
+        <Button Name="btn" Width="120px" Height="50px" Margin="0 250 200 0" Content="Vétel" FontSize="20px" Click="btnCarBuy_Click" IsEnabled="False"/>
 
 
     </Grid>
