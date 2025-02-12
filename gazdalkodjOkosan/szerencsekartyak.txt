@@ -1,0 +1,21 @@
+Lakástűzben megsérült pár bútorod, fizetned kell a cseréért!
+Jótékonysági tombola fődíját megnyerted!
+Előléptettek, és extra fizetést kapsz!
+Új kormányrendelet miatt csökkent a pályakezdő támogatásod!
+Örököltél egy autot, eladhatod vagy megtarthatod!
+Megnyertél egy háztartási gépet egy nyereményjátékon!
+Kimaradsz egy körből!
+Lecsapott a vihar! Ha nincs biztosításod, fizess 4500 Ft-ot a javításra.
+Kutyád tönkretette a kanapét! Fizess 3000 Ft-ot új bútorra.
+Váratlan adófizetés! Elfelejtett számlád van. Fizess 2500 Ft-ot.
+Megnyerted az év dolgozója díjat! Kapsz 5000 Ft jutalmat.
+	Bónuszt kaptál a munkahelyeden! A következő kör megkezdésekor kapsz 3000 Ft-ot.
+	Autóvásárlási akció! A következő autóvásárlásnál 2000 Ft kedvezményt kapsz.
+Visszatérítés a biztosítótól! Kapsz 2500 Ft-ot.
+Ingyenes szerelés! Ha elromlik egy berendezésed, nem kell fizetned a javításért.
+	Befektetésed jól sikerült! Kapsz 6000 Ft-ot.
+Lakástűz! Ha nincs biztosításod, elveszted a lakásod.
+Banki hiba miatt később kapod a fizetésed! Kimaradsz egy fizetésből.
+Felkeresett egy régi tolvaj ismerősöd. Lopass vele egy tetszőleges berendezést a házadba! (nem lehet autó)
+KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!
+

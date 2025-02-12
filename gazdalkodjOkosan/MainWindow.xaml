@@ -70,12 +70,12 @@
 
 
 
-        <Border Grid.Column="1" Grid.Row="4" Name="borderIkea">
+        <Border Grid.Column="1" Grid.Row="4" Name="borderMedia">
             <!--<Border.Background>-->
                 <!--<ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>-->
             <!--</Border.Background>-->
         </Border>
-        <Border Grid.Column="8" Grid.Row="7" Name="borderIkea2">
+        <Border Grid.Column="8" Grid.Row="7" Name="borderIkea">
             <!--<Border.Background>-->
             <!--<ImageBrush ImageSource="pack://application:,,,/Ikea_logo.svg.png"  Stretch="Fill"></ImageBrush>-->
             <!--</Border.Background>-->

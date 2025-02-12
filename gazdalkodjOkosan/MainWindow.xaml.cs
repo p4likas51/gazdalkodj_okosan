@@ -30,7 +30,7 @@ namespace gazdalkodjOkosan
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
                 { borderIkea, "Ikea_logo.svg.png" },
-                { borderIkea2, "Ikea_logo.svg.png" },
+                { borderMedia, "mediamarkt.png" },
                 { borderRacsok, "racsok.jpg" },
                 { borderSzerencse, "szerencse.png" },
                 { borderSzerencse2, "szerencse.png" },
@@ -178,6 +178,25 @@ namespace gazdalkodjOkosan
                 lblAction.Content = "+3000Ft";
             }
 
+        }
+
+        private void invest(int amount, Player player)
+        {
+            player.Balance += amount;
+            lblActionText.Content = "Befektetésed jól sikerült! Kapsz 6000 Ft-ot.";
+
+        }
+
+
+        private void bonus(int amount, Player player)
+        {
+            player.Bonus = amount;
+            lblActionText.Content = "Bónuszt kaptál a munkahelyeden! A következő kör megkezdésekor kapsz 3000 Ft-ot.";
+        }
+
+        private void Sale(int amount, Player player)
+        {
+            player.Sale = amount;
         }
 
         private void btnDice_Click(object sender, RoutedEventArgs e)

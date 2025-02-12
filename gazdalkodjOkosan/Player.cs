@@ -12,6 +12,9 @@ namespace gazdalkodjOkosan
 {
     public class Player
     {
+        public int Sale { get; set; }
+        public int CarPrice { get; set; }
+        public int Bonus { get; set; }
         public string Name { get; set; }
         public int Balance { get; set; }
         public List<string> Items { get; private set; }
@@ -26,7 +29,10 @@ namespace gazdalkodjOkosan
 
         public Player(string name, Brush playerColor, int startingBalance = 10000)
         {
+            Sale = 1;
+            CarPrice = 30000 * Sale;
             Name = name;
+            Bonus = 0;
             PlayerColor = playerColor;
             Balance = startingBalance;
             Items = new List<string>();
@@ -57,7 +63,8 @@ namespace gazdalkodjOkosan
             Step += DiceRoll;
             if (Step >= 24)
             {
-                Balance += 5000;
+                Balance += 5000 + Bonus;
+                Bonus = 0;
                 Step = Step - 24;
             }
         }
