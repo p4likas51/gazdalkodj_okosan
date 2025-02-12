@@ -23,16 +23,17 @@ namespace gazdalkodjOkosan
         public MediaMarkt(Player player)
         {
             InitializeComponent();
+            Player = player;
 
-            if (Player.ItemStatus["tv"] == true || player.Balance < player.ItemPrices["tv"])
+            if (Player.ItemStatus["tv"] == true || Player.Balance < Player.ItemPrices["tv"])
             {
                 TvBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["oven"] == true || player.Balance < player.ItemPrices["oven"])
+            if (Player.ItemStatus["oven"] == true || Player.Balance < Player.ItemPrices["oven"])
             {
                 OvenBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["washingmachine"] == true || player.Balance < player.ItemPrices["washingmachine"])
+            if (Player.ItemStatus["washingmachine"] == true || Player.Balance < Player.ItemPrices["washingmachine"])
             {
                 WashingmachineBuy.IsEnabled = false;
             }

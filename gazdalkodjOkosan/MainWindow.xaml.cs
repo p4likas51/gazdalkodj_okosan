@@ -183,11 +183,11 @@ namespace gazdalkodjOkosan
                 lblAction.Content = "-10000Ft";
             }
 
-            if (currentPosition.Name.StartsWith("borderSzerencse"))
-            {
-                LuckyCard window = new LuckyCard(player);
-                window.ShowDialog();
-            }
+            //if (currentPosition.Name.StartsWith("borderSzerencse"))
+            //{
+            //    LuckyCard window = new LuckyCard(player);
+            //    window.ShowDialog();
+            //}
 
             if (currentPosition.Name == "borderIkea")
             {
@@ -200,10 +200,12 @@ namespace gazdalkodjOkosan
                 MediaMarkt window = new MediaMarkt(player);
                 window.ShowDialog();
             }
-
-
-
-
+            if (currentPosition.Name == "borderLotto")
+            {
+                player.Balance += 5000;
+                lblActionText.Content = "Nyertél egy kaparós sorsjegyen";
+                lblAction.Content = "+5000Ft";
+            }
             if (currentPosition.Name == "borderAllatkert")
             {
                 lblActionText.Content = "A családdal elmentetek a helyi állatkertbe. Jó szórakozást!";
