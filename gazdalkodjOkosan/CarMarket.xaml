@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="CarMarket" Height="450" Width="800" FontSize="40px">
     <Grid>
-        <Label Content="Autó vásárlás" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
+        <Label Name="lblTitle" Content="Autó vásárlás" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
         <Border Name="borderCar" Width="200" Height="200"/>
+        <Border Name="borderHouse" Width="250" Height="200" Margin="0 0 0 40"/>
         <Button Name="btnCarBuy" Width="120px" Height="50px" Margin="200 250 0 0" Content="Vétel" FontSize="20px" Click="btnCarBuy_Click" IsEnabled="False"/>
         <Label Name="lblCarBuy" Content="Osszeg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 250 350 0"/>
         <Button Name="btnExit" Width="120px" Height="50px" Margin="600 250 0 0" Content="Kilépés" FontSize="20px" Click="btnExit_Click"/>

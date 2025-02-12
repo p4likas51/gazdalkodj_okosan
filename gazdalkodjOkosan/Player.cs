@@ -103,5 +103,22 @@ namespace gazdalkodjOkosan
             }
         }
 
+        public void MovePlayer(int step)
+        {
+            for (int i = 0; i < step; i++)
+            {
+                if (Row == 2 && Column < 8) Column++;
+                else if (Column == 8 && Row < 7) Row++;
+                else if (Row == 7 && Column > 1) Column--;
+                else if (Column == 1 && Row > 2) Row--;
+            }
+            Step += step;
+            if (Step >= 24)
+            {
+                Balance += 5000 + Bonus;
+                Step = Step - 24;
+            }
+        }
+
     }
 }
