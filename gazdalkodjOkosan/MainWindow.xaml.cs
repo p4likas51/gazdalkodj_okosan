@@ -193,16 +193,69 @@ namespace gazdalkodjOkosan
         }
 
 
-        private void bonus(int amount, Player player)
-        {
-            player.Bonus = amount;
-            lblActionText.Content = "Bónuszt kaptál a munkahelyeden! A következő kör megkezdésekor kapsz 3000 Ft-ot.";
-        }
 
         private void Sale(int amount, Player player)
         {
             player.Sale = amount;
+            lblActionText.Content = "Autóvásárlási akció! A következő autóvásárlásnál 2000 Ft kedvezményt kapsz.";
         }
+
+        private void Promotion(int amount, Player player)
+        {
+            player.Bonus = amount;
+            lblActionText.Content = "Előléptettek, így extra fizetést kapsz!";
+
+        }
+
+        private void LessBonus(int amount, Player player)
+        {
+            player.Bonus = amount;
+            lblActionText.Content = "Új kormányrendelet miatt csökkent a pályakezdő támogatásod!">
+        }
+
+        private void Taxes(int amount, Player player)
+        {
+            player.Balance -= amount;
+            lblActionText.Content = "Váratlan adófizetés! Elfelejtett számlád van. Fizess 2500 Ft-ot.";
+        }
+
+        private void wonPrize(int amount, Player player)
+        {
+            player.Balance += amount;
+            lblActionText.Content = "Jótékonysági tombola fődíját megnyerted!";
+        }
+
+        private void missingRound(int amount, Player player)
+        {
+            
+        }
+
+        private void WorkerOfTheYear(int amount, Player player)
+        {
+            player.Balance += amount;
+            lblActionText.Content = "Megnyerted az év dolgozója díjat! Kapsz 5000 Ft jutalmat.";
+        }
+
+        private void moneyGetBack(int amount, Player player)
+        {
+            player.Balance += amount;
+            lblActionText.Content = "Visszatérítés a biztosítótól! Kapsz 2500 Ft-ot.";
+        }
+
+        private void freeHouseInsurance(int amount, Player player)
+        {
+            lblActionText.Content = "Ingyen lakásbiztosítás!";
+
+            if (player.HouseInsurance == false)
+            {
+                player.HouseInsurance = true;
+            }
+            else
+            {
+                lblActionText.Content = "Már van lakásbiztosításod.";
+            }
+        }
+
 
         private void btnDice_Click(object sender, RoutedEventArgs e)
         {

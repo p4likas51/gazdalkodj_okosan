@@ -48,6 +48,7 @@ namespace gazdalkodjOkosan
             Column = 1;
 
         }
+
         public void MovePlayer()
         {
             Random random = new Random();
@@ -64,7 +65,6 @@ namespace gazdalkodjOkosan
             if (Step >= 24)
             {
                 Balance += 5000 + Bonus;
-                Bonus = 0;
                 Step = Step - 24;
             }
         }
