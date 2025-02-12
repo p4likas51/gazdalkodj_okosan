@@ -53,6 +53,14 @@ namespace gazdalkodjOkosan
                 { borderLotto, "lotto.jfif" },
                 { borderStart, "start.png" },
                 { borderMadar, "madarszar.jpg" },
+                { rctSofa, "kanape.jpg" },
+                { rctCar, "auto.png" },
+                { rctOven, "suto.webp" },
+                { rctCabinet, "szekreny.jpg" },
+                { rctTv, "tv.jpg" },
+                { rctBed, "agy.jpg" },
+                { rctLego, "lego.jpg" },
+                { rctWashing, "mosogep.webp" },
 
 
 
@@ -74,8 +82,54 @@ namespace gazdalkodjOkosan
                     ImageSource src = new BitmapImage(new Uri(path, UriKind.Absolute));
                     kep.Key.Background = new ImageBrush(src);
                 }
+
+                rctCar.Visibility = Visibility.Collapsed;
+                rctBed.Visibility = Visibility.Collapsed;
+                rctCabinet.Visibility = Visibility.Collapsed;
+                rctLego.Visibility = Visibility.Collapsed;
+                rctOven.Visibility = Visibility.Collapsed;
+                rctSofa.Visibility = Visibility.Collapsed;
+                rctTv.Visibility = Visibility.Collapsed;
+                rctWashing.Visibility = Visibility.Collapsed;
             };
         }
+
+        private void showItemImages(Player player)
+        {
+            if (player.ItemStatus["car"] == true)
+            {
+                rctCar.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["tv"] == true)
+            {
+                rctTv.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["oven"] == true)
+            {
+                rctOven.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["cabinet"] == true)
+            {
+                rctCabinet.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["bed"] == true)
+            {
+                rctBed.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["lego"] == true)
+            {
+                rctLego.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["washingmachine"] == true)
+            {
+                rctWashing.Visibility = Visibility.Visible;
+            }
+            else if (player.ItemStatus["sofa"] == true)
+            {
+                rctSofa.Visibility = Visibility.Visible;
+            }
+        }
+
         private void UpdatePlayerPosition(Player player)
         {
             Grid.SetRow(player.Shape, player.Row);
@@ -100,6 +154,7 @@ namespace gazdalkodjOkosan
             updateBalance();
             FieldActions(element, player);
             updateBalance();
+            showItemImages(player);
         }
 
         private void PlayARound(Player player, int step)
@@ -239,6 +294,8 @@ namespace gazdalkodjOkosan
                 lblActionText.Content = "Találtál egy tárcát a földön";
                 lblAction.Content = "+3000Ft";
             }
+
+
 
         }
 

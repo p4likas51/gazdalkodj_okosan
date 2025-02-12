@@ -39,7 +39,16 @@ namespace gazdalkodjOkosan
                 Amount = player.ItemPrices["houseInsurance"];
                 lblTitle.Content = "Házbiztosítás";
             }
-            if (Player.Balance >= Amount) btnCarInsurance.IsEnabled = true;
+            if(Type == "car")
+            {
+                if (Player.Balance >= Amount && Player.ItemStatus["car"] == true) btnCarInsurance.IsEnabled = true;
+
+            }
+            if(Type == "house")
+            {
+                if (Player.Balance >= Amount && Player.ItemStatus["house"] == true) btnCarInsurance.IsEnabled = true;
+
+            }
             lblAmount.Content = $"-{Amount}";
         }
 

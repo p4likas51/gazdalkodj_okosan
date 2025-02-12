@@ -25,15 +25,15 @@ namespace gazdalkodjOkosan
             InitializeComponent();
             Player = player;
 
-            if (Player.ItemStatus["tv"] == true || Player.Balance < Player.ItemPrices["tv"])
+            if (Player.ItemStatus["tv"] == true || Player.Balance < Player.ItemPrices["tv"] || Player.ItemStatus["house"] == false)
             {
                 TvBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["oven"] == true || Player.Balance < Player.ItemPrices["oven"])
+            if (Player.ItemStatus["oven"] == true || Player.Balance < Player.ItemPrices["oven"] || Player.ItemStatus["house"] == false)
             {
                 OvenBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["washingmachine"] == true || Player.Balance < Player.ItemPrices["washingmachine"])
+            if (Player.ItemStatus["washingmachine"] == true && Player.Balance < Player.ItemPrices["washingmachine"] || Player.ItemStatus["house"] == false)
             {
                 WashingmachineBuy.IsEnabled = false;
             }
@@ -58,6 +58,7 @@ namespace gazdalkodjOkosan
         {
             Player.ItemStatus["tv"] = true;
             lblMediaText.Content = "Vásároltál egy televíziót!";
+            Player.Balance -= Player.ItemPrices["tv"];
             DialogResult = true;
             Close();
         }
@@ -66,6 +67,7 @@ namespace gazdalkodjOkosan
         {
             Player.ItemStatus["oven"] = true;
             lblMediaText.Content = "Vásároltál egy sütőt!";
+            Player.Balance -= Player.ItemPrices["oven"];
             DialogResult = true;
             Close();
 
@@ -75,6 +77,7 @@ namespace gazdalkodjOkosan
         {
             Player.ItemStatus["washingmachine"] = true;
             lblMediaText.Content = "Vásároltál egy mosógépet!";
+            Player.Balance -= Player.ItemPrices["washingmachine"];
             DialogResult = true;
             Close();
 

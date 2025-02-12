@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,15 +25,15 @@ namespace gazdalkodjOkosan
         {
             Player = player;
             InitializeComponent();
-            if (Player.ItemStatus["sofa"] == true || player.Balance < player.ItemPrices["sofa"])
+            if (Player.ItemStatus["sofa"] == true || player.Balance < player.ItemPrices["sofa"] || player.ItemStatus["house"] == false)
             {
                 SofaBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["cabinet"] == true || player.Balance < player.ItemPrices["cabinet"])
+            if (Player.ItemStatus["cabinet"] == true || player.Balance < player.ItemPrices["cabinet"] || player.ItemStatus["house"] == false)
             {
                 CabinetBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["bed"] == true || player.Balance < player.ItemPrices["bed"])
+            if (Player.ItemStatus["bed"] == true || player.Balance < player.ItemPrices["bed"] || player.ItemStatus["house"] == false)
             {
                 BedBuy.IsEnabled = false;
             }
@@ -63,6 +64,7 @@ namespace gazdalkodjOkosan
              Player.ItemStatus["sofa"] = true;
 
              lblIkeaText.Content = "Vásároltál egy kanapét!";
+            Player.Balance -= Player.ItemPrices["sofa"];
             DialogResult = true;
             Close();
 
@@ -74,6 +76,7 @@ namespace gazdalkodjOkosan
 
                 Player.ItemStatus["cabinet"] = true;
                 lblIkeaText.Content = "Vásároltál egy ruhásszekrényt!";
+            Player.Balance -= Player.ItemPrices["cabinet"];
             DialogResult = true;
             Close();
 
@@ -86,6 +89,7 @@ namespace gazdalkodjOkosan
 
                 Player.ItemStatus["bed"] = true;
                 lblIkeaText.Content = "Vásároltál egy ágyat!";
+            Player.Balance -= Player.ItemPrices["bed"];
             DialogResult = true;
             Close();
 

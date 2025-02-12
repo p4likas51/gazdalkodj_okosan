@@ -18,7 +18,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -41,13 +41,23 @@
         <Label VerticalAlignment="Center" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1" Content="Kanapé"></Label>
         <Label VerticalAlignment="Center" FontSize="14" FontWeight="Bold"  HorizontalAlignment="Center"  Grid.Column="6" Grid.Row="1" Content="Mosógép"></Label>
 
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Content="6000 Ft"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Content="Sütő"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" Content="Ruhásszekrény"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1" Content="Ágy"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1" Content="Lego"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1" Content="Kanapé"></Label>
-        <Label VerticalAlignment="Bottom" Foreground="White"  FontSize="14" FontWeight="Bold"  HorizontalAlignment="Center"  Grid.Column="6" Grid.Row="1" Content="Mosógép"></Label>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" Content="6000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"/>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Content="3000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" Content="6000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1" Content="8000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1" Content="2000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
+        <Label VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1" Content="5000 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
+        <Label VerticalAlignment="Top" Foreground="White"  FontSize="14" FontWeight="Bold"  HorizontalAlignment="Center"  Grid.Column="6" Grid.Row="1" Content="2500 Ft" Margin="0,116,0,0" Background="#99000000" OpacityMask="Black"></Label>
 
+        <Button Name="btnStealTv" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="3" Click="btnStealTv_Click">Kiválasztás</Button>
+        <Button Name="btnStealOven" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="3" Click="btnStealOven_Click">Kiválasztás</Button>
+        <Button Name="btnStealCabinet" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="3" Click="btnStealCabinet_Click">Kiválasztás</Button>
+        <Button Name="btnStealBed" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="3" Click="btnStealBed_Click">Kiválasztás</Button>
+        <Button Name="btnStealLego" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="3" Click="btnStealLego_Click">Kiválasztás</Button>
+        <Button Name="btnStealSofa" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="3" Click="btnStealSofa_Click">Kiválasztás</Button>
+        <Button Name="btnStealWashing" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="6" BorderBrush="Black" BorderThickness="3" Click="btnStealWashing_Click">Kiválasztás</Button>
+
+
+        <Label Grid.Row="2" Grid.Column="3" FontSize="16" Margin="0 0 0 20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="lblStealText"></Label>
     </Grid>
 </Window>

@@ -32,7 +32,7 @@ namespace gazdalkodjOkosan
         public bool CarInsurance = false;
         public bool HouseInsurance = false;
 
-        public Player(string name, Brush playerColor, int startingBalance = 10000)
+        public Player(string name, Brush playerColor, int startingBalance = 200000)
         {
             ItemStatus = new Dictionary<string, bool>()
             {

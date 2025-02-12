@@ -48,7 +48,7 @@ namespace gazdalkodjOkosan
                 lblTitle.Content = "Autó vásárlás";
                 Amount = player.ItemPrices["car"];
                 lblCarBuy.Content = $"Összeg: -{Amount}Ft";
-                if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
+                if (player.Balance >= Amount && player.ItemStatus["house"] == true) btnCarBuy.IsEnabled = true;
             }
             if (Item == "house")
             {
@@ -72,6 +72,7 @@ namespace gazdalkodjOkosan
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show($"{Player.ItemStatus["car"]}");
             DialogResult = true;
             Close();
         }
