@@ -155,6 +155,12 @@ namespace gazdalkodjOkosan
                 window.ShowDialog();
             }
 
+            if (currentPosition.Name == "borderMedia")
+            {
+                MediaMarkt window = new MediaMarkt(player);
+                window.ShowDialog();
+            }
+
 
 
 

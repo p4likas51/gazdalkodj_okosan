@@ -15,32 +15,31 @@ using System.Windows.Shapes;
 namespace gazdalkodjOkosan
 {
     /// <summary>
-    /// Interaction logic for Ikea.xaml
+    /// Interaction logic for MediaMarkt.xaml
     /// </summary>
-    public partial class Ikea : Window
+    public partial class MediaMarkt : Window
     {
         public Player Player { get; private set; }
-        public Ikea(Player player)
+        public MediaMarkt(Player player)
         {
-            Player = player;
             InitializeComponent();
-            if (Player.ItemStatus["sofa"] == true || player.Balance < player.ItemPrices["sofa"])
-            {
-                SofaBuy.IsEnabled = false;
-            }
-            if (Player.ItemStatus["cabinet"] == true || player.Balance < player.ItemPrices["cabinet"])
-            {
-                CabinetBuy.IsEnabled = false;
-            }
-            if (Player.ItemStatus["bed"] == true || player.Balance < player.ItemPrices["bed"])
-            {
-                BedBuy.IsEnabled = false;
-            }
 
+            if (Player.ItemStatus["tv"] == true || player.Balance < player.ItemPrices["tv"])
+            {
+                TvBuy.IsEnabled = false;
+            }
+            if (Player.ItemStatus["oven"] == true || player.Balance < player.ItemPrices["oven"])
+            {
+                OvenBuy.IsEnabled = false;
+            }
+            if (Player.ItemStatus["washingmachine"] == true || player.Balance < player.ItemPrices["washingmachine"])
+            {
+                WashingmachineBuy.IsEnabled = false;
+            }
 
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
-                { Ikeabackground, "ikeabelter.jpg" },
+                { MediaBackground, "mediabelter.jpg" },
             };
 
             Loaded += (sender, e) =>
@@ -54,38 +53,27 @@ namespace gazdalkodjOkosan
             };
         }
 
-
-
-        private void SofaBuy_Click(object sender, RoutedEventArgs e)
+        private void TvBuy_Click(object sender, RoutedEventArgs e)
         {
+            Player.ItemStatus["tv"] = true;
+            lblMediaText.Content = "Vásároltál egy televíziót!";
+            DialogResult = true;
+            Close();
+        }
 
-       
-             Player.ItemStatus["sofa"] = true;
-
-             lblIkeaText.Content = "Vásároltál egy kanapét!";
+        private void OvenBuy_Click(object sender, RoutedEventArgs e)
+        {
+            Player.ItemStatus["oven"] = true;
+            lblMediaText.Content = "Vásároltál egy sütőt!";
             DialogResult = true;
             Close();
 
         }
 
-        private void CabinetBuy_Click(object sender, RoutedEventArgs e)
+        private void WashingmachineBuy_Click(object sender, RoutedEventArgs e)
         {
-
-
-                Player.ItemStatus["cabinet"] = true;
-                lblIkeaText.Content = "Vásároltál egy ruhásszekrényt!";
-            DialogResult = true;
-            Close();
-
-
-        }
-
-        private void BedBuy_Click(object sender, RoutedEventArgs e)
-        {
-    
-
-                Player.ItemStatus["bed"] = true;
-                lblIkeaText.Content = "Vásároltál egy ágyat!";
+            Player.ItemStatus["washingmachine"] = true;
+            lblMediaText.Content = "Vásároltál egy mosógépet!";
             DialogResult = true;
             Close();
 
