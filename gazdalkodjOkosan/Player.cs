@@ -13,7 +13,9 @@ namespace gazdalkodjOkosan
 {
     public class Player
     {
-        public int Sale { get; set; }
+        public int DiscountCar { get; set; }
+        public int DiscountItems { get; set; }
+        public int DiscountHouse { get; set; }
         public int Bonus { get; set; }
         public string Name { get; set; }
         public int Balance { get; set; }
@@ -42,21 +44,28 @@ namespace gazdalkodjOkosan
                 {"bed", false },
                 {"lego", false },
                 {"washingmachine", false },
-                {"sofa", false }
+                {"sofa", false },
+                {"houseInsurance", false },
+                {"CarInsurance", false }
+
             };
             ItemPrices = new Dictionary<string, int>()
             {
-                {"house", 30000 },
-                {"car", 20000 },
-                {"tv", 12000 },
-                {"owen", 4000 },
-                {"cabinet", 4000 },
-                {"bed", 5000 },
-                {"lego", 2000 },
-                {"washingmachine", 5000 },
-                {"sofa", 10000 }
+                {"house", 30000 * DiscountHouse},
+                {"car", 20000 * DiscountCar},
+                {"tv", 12000 * DiscountItems},
+                {"owen", 4000 * DiscountItems},
+                {"cabinet", 4000 * DiscountItems},
+                {"bed", 5000 * DiscountItems},
+                {"lego", 2000 * DiscountItems},
+                {"washingmachine", 5000 * DiscountItems},
+                {"sofa", 10000 * DiscountItems},
+                {"houseInsurance", 30000 },
+                {"CarInsurance", 20000 },
             };
-            Sale = 1;
+            DiscountCar = 1;
+            DiscountHouse = 1;
+            DiscountItems = 1;
             Name = name;
             Bonus = 0;
             PlayerColor = playerColor;

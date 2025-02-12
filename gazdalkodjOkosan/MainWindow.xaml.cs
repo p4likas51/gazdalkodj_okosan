@@ -194,9 +194,9 @@ namespace gazdalkodjOkosan
 
 
 
-        private void Sale(int amount, Player player)
+        private void CarDiscount(int amount, Player player)
         {
-            player.Sale = amount;
+            player.DiscountCar = amount;
             lblActionText.Content = "Autóvásárlási akció! A következő autóvásárlásnál 2000 Ft kedvezményt kapsz.";
         }
 
@@ -210,7 +210,7 @@ namespace gazdalkodjOkosan
         private void LessBonus(int amount, Player player)
         {
             player.Bonus = amount;
-            lblActionText.Content = "Új kormányrendelet miatt csökkent a pályakezdő támogatásod!">
+            lblActionText.Content = "Új kormányrendelet miatt csökkent a pályakezdő támogatásod!";
         }
 
         private void Taxes(int amount, Player player)
@@ -254,6 +254,12 @@ namespace gazdalkodjOkosan
             {
                 lblActionText.Content = "Már van lakásbiztosításod.";
             }
+        }
+
+        private void Coupons(int amount, Player player)
+        {
+
+            lblActionText.Content = "KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!";
         }
 
 
