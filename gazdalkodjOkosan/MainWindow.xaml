@@ -35,8 +35,8 @@
             <RowDefinition></RowDefinition>
             
         </Grid.RowDefinitions>
-        <Label Name="lblSzoveg" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
-        <Label Name="lblProba" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
+        <Label Name="lblCarInsurance" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
+        <Label Name="lblHouseInsurance" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
         <Label Grid.Row="0" Grid.Column="11" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Egyenleg:"/>
         <Label Name="lblp1Balance" Grid.Row="1" Grid.Column="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="balance..." FontSize="25"/>
         <Label Name="lblp2Balance" Grid.Row="1" Grid.Column="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="balance..." FontSize="25"/>
