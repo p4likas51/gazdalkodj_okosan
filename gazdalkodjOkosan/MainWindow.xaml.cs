@@ -130,6 +130,11 @@ namespace gazdalkodjOkosan
                 }
                 
             }
+            if (currentPosition.Name == "borderAutovasarlas")
+            {
+                CarMarket carMarketWindow = new CarMarket(player);
+                carMarketWindow.ShowDialog();
+            }
             if (currentPosition.Name == "borderRablas")
             {
                 if (player.Balance <= 10000) player.Balance = 0;
