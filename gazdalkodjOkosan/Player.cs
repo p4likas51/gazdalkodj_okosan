@@ -46,7 +46,7 @@ namespace gazdalkodjOkosan
                 {"washingmachine", false },
                 {"sofa", false },
                 {"houseInsurance", false },
-                {"CarInsurance", false }
+                {"carInsurance", false }
 
             };
             ItemPrices = new Dictionary<string, double>()
@@ -61,7 +61,7 @@ namespace gazdalkodjOkosan
                 {"washingmachine", 5000 * DiscountItems},
                 {"sofa", 10000 * DiscountItems},
                 {"houseInsurance", 30000 },
-                {"CarInsurance", 20000 },
+                {"carInsurance", 20000 },
             };
             DiscountCar = 1;
             DiscountHouse = 1;

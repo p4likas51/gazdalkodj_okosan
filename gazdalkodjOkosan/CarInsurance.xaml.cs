@@ -28,15 +28,15 @@ namespace gazdalkodjOkosan
         {
             InitializeComponent();
             Player = player;
-            Type = type;
-            if (Type.ToLower() == "car")
+            Type = type.ToLower();
+            if (Type == "car")
             {
-                Amount = 10000;
+                Amount = player.ItemPrices["carInsurance"];
                 lblTitle.Content = "Gépjármű biztosítás";
             }
-             else if (Type.ToLower() == "house")
+             else if (Type == "house")
             {
-                Amount = 30000;
+                Amount = player.ItemPrices["houseInsurance"];
                 lblTitle.Content = "Házbiztosítás";
             }
             if (Player.Balance >= Amount) btnCarInsurance.IsEnabled = true;
@@ -52,8 +52,8 @@ namespace gazdalkodjOkosan
                 Player.Balance -= Amount;
             }
             lblAmount.Content = "Sikeres biztosítás vásárlás!";
-            if (Type.ToLower() == "car") Player.CarInsurance = true;
-            if (Type.ToLower() == "house") Player.HouseInsurance = true;
+            if (Type.ToLower() == "car") Player.ItemStatus["carInsurance"] = true;
+            if (Type.ToLower() == "house") Player.ItemStatus["houseInsurance"] = true;
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
