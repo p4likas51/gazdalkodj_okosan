@@ -19,7 +19,7 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class CarMarket : Window
     {
-        private int Amount;
+        private double Amount;
         public Player Player;
         public CarMarket(Player player)
         {
@@ -39,8 +39,7 @@ namespace gazdalkodjOkosan
                 }
             };
             Amount = player.ItemPrices["car"];
-            lblCarBuy.Content = $"-{Amount}";
-            MessageBox.Show($"auto ara: {Amount}");
+            lblCarBuy.Content = $"Összeg: -{Amount}Ft";
             if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
         }
 

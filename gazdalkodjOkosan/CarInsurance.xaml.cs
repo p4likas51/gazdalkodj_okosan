@@ -20,7 +20,7 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class CarInsurance : Window
     {
-        private int Amount;
+        private double Amount;
         private string Type;
         public Player Player { get; private set; }
 

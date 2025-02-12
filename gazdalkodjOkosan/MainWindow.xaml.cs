@@ -104,7 +104,6 @@ namespace gazdalkodjOkosan
 
         public void FieldActions(FrameworkElement currentPosition, Player player)
         {
-            MessageBox.Show($"{player.ItemPrices["lego"]}");
             if (currentPosition.Name == "borderBiztositas2")
             {
                 if (player.ItemStatus["carInsurance"] == true)
@@ -135,7 +134,6 @@ namespace gazdalkodjOkosan
             {
                 CarMarket carMarketWindow = new CarMarket(player);
                 carMarketWindow.ShowDialog();
-                MessageBox.Show($"van auto: {player.ItemStatus["car"]}");
             }
             if (currentPosition.Name == "borderRablas")
             {

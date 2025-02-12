@@ -18,7 +18,7 @@ namespace gazdalkodjOkosan
         public double DiscountHouse { get; set; }
         public int Bonus { get; set; }
         public string Name { get; set; }
-        public int Balance { get; set; }
+        public double Balance { get; set; }
         public List<string> Items { get; private set; }
         public Brush PlayerColor { get; set; }
         public Ellipse Shape {  get; set; }
@@ -49,6 +49,9 @@ namespace gazdalkodjOkosan
                 {"carInsurance", false }
 
             };
+            DiscountCar = 1;
+            DiscountHouse = 1;
+            DiscountItems = 1;
             ItemPrices = new Dictionary<string, double>()
             {
                 {"house", 30000 * DiscountHouse},
@@ -63,9 +66,6 @@ namespace gazdalkodjOkosan
                 {"houseInsurance", 30000 },
                 {"carInsurance", 20000 },
             };
-            DiscountCar = 1;
-            DiscountHouse = 1;
-            DiscountItems = 1;
             Name = name;
             Bonus = 0;
             PlayerColor = playerColor;
