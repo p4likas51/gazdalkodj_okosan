@@ -73,7 +73,10 @@ namespace gazdalkodjOkosan
                     GetRepairTool(Player);
                     break;
                 case 13:
-                    houseFire(4000, Player);
+                    houseFire(5000, Player);
+                    break;
+                case 14:
+                    dogIncident(3000, Player);
                     break;
             }
             btnExit.Visibility = Visibility.Visible;
@@ -170,10 +173,18 @@ namespace gazdalkodjOkosan
             player.RepairTool = true;
         }
 
-        private void houseFire(int amount ,Player player)
+        private void houseFire(int amount, Player player)
         {
+            if (player.Balance <= amount) player.Balance = 0;
+            else player.Balance -= amount;
             lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
         }
 
+        private void dogIncident(int amount, Player player)
+        {
+            if (player.Balance <= amount) player.Balance = 0;
+            else player.Balance -= amount;
+            lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon. Fizess {amount} Ft-ot új bútorra.";
+        }
     }
 }
