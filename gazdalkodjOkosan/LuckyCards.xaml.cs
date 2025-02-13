@@ -72,6 +72,9 @@ namespace gazdalkodjOkosan
                 case 12:
                     GetRepairTool(Player);
                     break;
+                case 13:
+                    houseFire(4000, Player);
+                    break;
             }
             btnExit.Visibility = Visibility.Visible;
         }
@@ -166,5 +169,11 @@ namespace gazdalkodjOkosan
             lblCard.Content = "Találtál egy szerelődobozt az utcán, ha bármid elromlik egyszer meg tudod javítani!";
             player.RepairTool = true;
         }
+
+        private void houseFire(int amount ,Player player)
+        {
+            lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+        }
+
     }
 }
