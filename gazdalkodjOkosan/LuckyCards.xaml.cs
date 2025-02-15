@@ -186,5 +186,10 @@ namespace gazdalkodjOkosan
             else player.Balance -= amount;
             lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon. Fizess {amount} Ft-ot új bútorra.";
         }
+        private void freeCar(int amount, Player player)
+        {
+
+            lblCard.Content = $"Örököltél egy autót, eladhatod vagy megtarthatod!";
+        }
     }
 }

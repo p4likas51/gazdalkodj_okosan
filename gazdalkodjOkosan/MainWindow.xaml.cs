@@ -59,8 +59,14 @@ namespace gazdalkodjOkosan
                 { rctCabinet, "szekreny.jpg" },
                 { rctTv, "tv.jpg" },
                 { rctBed, "agy.jpg" },
-                { rctLego, "lego.jpg" },
-                { rctWashing, "mosogep.webp" },
+                { rctLego, "lego.png" },
+                { rctWashing, "mosogep.webp" }, 
+                { Background, "asztal.jpg" },
+                { Cards, "kartyak-keret.png" },
+                { Title, "felirat-forgatva.png" },
+                { Wallet, "wallet.png" },
+                { brdDice, "dobokocka.png" }
+
 
 
 
@@ -266,6 +272,13 @@ namespace gazdalkodjOkosan
             if (currentPosition.Name == "borderIkea")
             {
                 Ikea window = new Ikea(player);
+                window.ShowDialog();
+            }
+
+
+            if (currentPosition.Name == "borderJatekbolt")
+            {
+                Lego window = new Lego(player);
                 window.ShowDialog();
             }
 

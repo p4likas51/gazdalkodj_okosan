@@ -1,0 +1,37 @@
+﻿<Window x:Class="gazdalkodjOkosan.Lego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gazdalkodjOkosan"
+        mc:Ignorable="d"
+        Title="Lego" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Name="LegoBackground" Grid.ColumnSpan="3" Grid.RowSpan="4"></Border>
+
+        <Label Grid.Row="0" Grid.Column="0" Padding="30"  Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="40" FontWeight="Black" Background="#FF7035AD" Foreground="White" >Regio Játékbolt</Label>
+
+        <Border Panel.ZIndex="1" Padding="6" Margin="10,20,10,108" Name="legoBuy" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"></Border>
+        <Border Padding="6" Grid.Column="1" Grid.Row="1" Background="#99000000" CornerRadius="16" Margin="0,108,0,85" Grid.RowSpan="3"></Border>
+
+        <Label Grid.Row="1" Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Background="#99000000" Foreground="White" Margin="0 0 0 10">4000 Ft</Label>
+
+        <Button Margin="0 10 0 0" Name="btnLegoBuy" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="DemiBold" Click="Button_Click" BorderBrush="Black">Vásárlás</Button>
+
+        <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 20" Name="lblLegoText"></Label>
+
+    </Grid>
+</Window>

@@ -25,6 +25,8 @@ namespace gazdalkodjOkosan
         public CarMarket(Player player, string item)
         {
             InitializeComponent();
+ 
+
             Player = player;
             Item = item;
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
@@ -48,7 +50,7 @@ namespace gazdalkodjOkosan
                 lblTitle.Content = "Autó vásárlás";
                 Amount = player.ItemPrices["car"];
                 lblCarBuy.Content = $"Összeg: -{Amount}Ft";
-                if (player.Balance >= Amount && player.ItemStatus["house"] == true) btnCarBuy.IsEnabled = true;
+                if (player.Balance >= Amount && player.ItemStatus["house"] == true && player.ItemStatus["car"] == false) btnCarBuy.IsEnabled = true;
             }
             if (Item == "house")
             {
@@ -56,7 +58,7 @@ namespace gazdalkodjOkosan
                 lblTitle.Content = "Ház vásárlás";
                 Amount = player.ItemPrices["house"];
                 lblCarBuy.Content = $"Összeg: -{Amount}Ft";
-                if (player.Balance >= Amount) btnCarBuy.IsEnabled = true;
+                if (player.Balance >= Amount && player.ItemStatus["house"] == false) btnCarBuy.IsEnabled = true;
             }
         }
 
