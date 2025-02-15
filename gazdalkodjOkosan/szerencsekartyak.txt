@@ -15,7 +15,7 @@ Ingyenes szerelés! Ha elromlik egy berendezésed, nem kell fizetned a javítás
 	Befektetésed jól sikerült! Kapsz 6000 Ft-ot.
 Lakástűz! Ha nincs biztosításod, elveszted a lakásod.
 Banki hiba miatt később kapod a fizetésed! Kimaradsz egy fizetésből.
-Felkeresett egy régi tolvaj ismerősöd. Lopass vele egy tetszőleges berendezést a házadba! (nem lehet autó)
+	Felkeresett egy régi tolvaj ismerősöd. Lopass vele egy tetszőleges berendezést a házadba! (nem lehet autó)
 	KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!
 	Ingyen lakásbiztosítás!
 
