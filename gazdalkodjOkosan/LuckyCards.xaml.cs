@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(1, 14);
+            int randomCard = random.Next(15, 16);
             switch (randomCard)
             {
                 case 1:
@@ -78,6 +78,10 @@ namespace gazdalkodjOkosan
                 case 14:
                     dogIncident(3000, Player);
                     break;
+                case 15:
+                    freeCar(Player);
+                    break;
+
             }
             btnExit.Visibility = Visibility.Visible;
         }
@@ -186,10 +190,12 @@ namespace gazdalkodjOkosan
             else player.Balance -= amount;
             lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon. Fizess {amount} Ft-ot új bútorra.";
         }
-        private void freeCar(int amount, Player player)
+        private void freeCar( Player player)
         {
 
             lblCard.Content = $"Örököltél egy autót, eladhatod vagy megtarthatod!";
+            freeCar window = new freeCar(player);
+            window.ShowDialog();
         }
     }
 }
