@@ -231,21 +231,27 @@ namespace gazdalkodjOkosan
             if (currentPosition.Name == "borderMav")
             {
                 lblActionText.Content = "Elvonatozol az állatkertbe";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 7);
                 
             }
             if (currentPosition.Name == "borderHev")
             {
                 lblActionText.Content = "Elvonatozol a vidámparkba";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 4);
 
             }
             if (currentPosition.Name == "borderBkv")
             {
                 lblActionText.Content = "Elvonatozol a tropicáriumba";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 9);
 
             }

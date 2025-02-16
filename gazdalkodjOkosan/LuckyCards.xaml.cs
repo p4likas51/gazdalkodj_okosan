@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(15, 16);
+            int randomCard = random.Next(1, 16);
             switch (randomCard)
             {
                 case 1:
@@ -179,9 +179,18 @@ namespace gazdalkodjOkosan
 
         private void houseFire(int amount, Player player)
         {
-            if (player.Balance <= amount) player.Balance = 0;
-            else player.Balance -= amount;
-            lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+            if (player.RepairTool)
+            {
+                lblCard.Content = $"Volt szerelőkészleted ezt most megúsztad!";
+                player.RepairTool = false;
+            }
+            else
+            {
+                if (player.Balance <= amount) player.Balance = 0;
+                else player.Balance -= amount;
+                lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+            }
+
         }
 
         private void dogIncident(int amount, Player player)

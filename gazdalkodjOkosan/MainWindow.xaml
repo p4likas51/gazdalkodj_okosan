@@ -41,14 +41,14 @@
         <Border Name="Wallet" Panel.ZIndex="2" Grid.Row="0" Grid.Column="11" Grid.ColumnSpan="2" Grid.RowSpan="3" />
         <Label Panel.ZIndex="3" Name="lblp1Balance" Grid.Row="2" Grid.Column="11" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="20" FontFamily="Arial Rounded MT Bold" Margin="30 0 0 0"/>
         <Label Panel.ZIndex="3" Name="lblp2Balance" Grid.Row="2" Grid.Column="12" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="20" FontFamily="Arial Rounded MT Bold" Margin="0 0 30 0"/>
-        <Label Panel.ZIndex="1" Name="lblActionText" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" FontSize="25px" HorizontalContentAlignment="Center">
+        <Label Panel.ZIndex="1" Name="lblActionText" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" FontSize="25px" HorizontalContentAlignment="Center">
             <Label.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" TextWrapping="Wrap" TextAlignment="Center"/>
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
-        <Label Name="lblAction" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" FontSize="25px" HorizontalAlignment="Center"/>
+        <Label Name="lblAction" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" FontSize="25px" HorizontalAlignment="Center"/>
         <!--<Label Grid.Row="2" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="8" Content="X"/>
