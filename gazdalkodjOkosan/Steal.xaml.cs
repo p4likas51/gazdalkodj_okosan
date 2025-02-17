@@ -29,27 +29,27 @@ namespace gazdalkodjOkosan
             {
                 btnStealTv.IsEnabled = false;
             }
-            else if (Player.ItemStatus["oven"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["oven"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealOven.IsEnabled = false;
             }
-            else if (Player.ItemStatus["cabinet"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["cabinet"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealCabinet.IsEnabled = false;
             }
-            else if (Player.ItemStatus["bed"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["bed"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealBed.IsEnabled = false;
             }
-            else if (Player.ItemStatus["lego"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["lego"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealLego.IsEnabled = false;
             }
-            else if (Player.ItemStatus["washingmachine"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["washingmachine"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealWashing.IsEnabled = false;
             }
-            else if (Player.ItemStatus["sofa"] == true || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["sofa"] == true || Player.ItemStatus["house"] == false)
             {
                 btnStealSofa.IsEnabled = false;
             }

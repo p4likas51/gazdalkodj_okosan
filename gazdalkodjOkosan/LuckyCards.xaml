@@ -8,6 +8,7 @@
         Title="LuckyCards" Height="450" Width="800" FontSize="40px">
     <Grid>
         <Label Content="Szerencsekártya" HorizontalAlignment="Center" Height="80" VerticalAlignment="Top"/>
+       
         <Button Name="btnPickCard" Width="120px" Height="50px" Margin="0 0 0 200" Content="Húzás" FontSize="20px" Click="btnPickCard_Click"/>
         <Label Name="lblCard" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20px"/>
         <Button Name="btnExit" Width="120px" Height="50px" Margin="0 330 0 0" Content="Kilépés" FontSize="20px" Click="btnExit_Click" Visibility="Collapsed"/>

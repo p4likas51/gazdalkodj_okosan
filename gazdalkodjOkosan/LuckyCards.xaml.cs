@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(1, 18);
+            int randomCard = random.Next(17, 18);
             switch (randomCard)
             {
                 case 1:

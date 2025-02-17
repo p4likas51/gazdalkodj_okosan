@@ -55,8 +55,10 @@
         <Border Panel.ZIndex="1" Name="Cards" Grid.Column="6" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0 0 20 0"></Border>
         <Border Panel.ZIndex="1" Name="Title" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="30 0 0 0"></Border>
 
+        
 
-        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8"  Fill="Transparent" StrokeThickness="3"/>
+
+            <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8"  Fill="Transparent" StrokeThickness="3"/>
         <Rectangle Panel.ZIndex="0" Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="#FFE8E8E8" StrokeThickness="3"/>
         
         

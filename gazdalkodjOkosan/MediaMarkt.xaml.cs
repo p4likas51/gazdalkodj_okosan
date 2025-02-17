@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             {
                 OvenBuy.IsEnabled = false;
             }
-            if (Player.ItemStatus["washingmachine"] == true && Player.Balance < Player.ItemPrices["washingmachine"] || Player.ItemStatus["house"] == false)
+            if (Player.ItemStatus["washingmachine"] == true || Player.Balance < Player.ItemPrices["washingmachine"] || Player.ItemStatus["house"] == false)
             {
                 WashingmachineBuy.IsEnabled = false;
             }
