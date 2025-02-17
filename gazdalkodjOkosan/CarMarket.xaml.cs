@@ -74,7 +74,6 @@ namespace gazdalkodjOkosan
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"{Player.ItemStatus["car"]}");
             DialogResult = true;
             Close();
         }

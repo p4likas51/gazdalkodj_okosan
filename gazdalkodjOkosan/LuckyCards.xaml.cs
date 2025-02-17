@@ -81,6 +81,9 @@ namespace gazdalkodjOkosan
                 case 15:
                     freeCar(Player);
                     break;
+                case 16:
+                    houseFire(Player);
+                    break;
                 case 17:
                     stealSomething(Player);
                     break;
@@ -151,10 +154,13 @@ namespace gazdalkodjOkosan
         private void freeHouseInsurance(Player player)
         {
             lblCard.Content = "Ingyen lakásbiztosítás!";
-
-            if (player.ItemStatus["carInsurance"] == false)
+            if (player.ItemStatus["house"] == false)
             {
-                player.ItemStatus["carInsurance"] = true;
+                lblCard.Content = $"Nem kaphatsz lakásbiztosítást, még nincs lakásod";
+            }
+            else if (player.ItemStatus["houseInsurance"] == false)
+            {
+                player.ItemStatus["houseInsurance"] = true;
             }
             else
             {
@@ -208,6 +214,22 @@ namespace gazdalkodjOkosan
             lblCard.Content = $"Örököltél egy autót, eladhatod vagy megtarthatod!";
             freeCar window = new freeCar(player);
             window.ShowDialog();
+        }
+        private void houseFire(Player player)
+        {
+            if (player.ItemStatus["houseInsurance"] == true)
+            {
+                lblCard.Content = "Leégett a házad de fizet a biztosítód, de felbontották a szerződést újat kell majd kötnöd";
+                player.ItemStatus["houseInsurance"] = false;
+            }
+            else
+            {
+                lblCard.Content = "Leégett a házad és még biztosításod sem volt...";
+                foreach (var key in player.ItemStatus.Keys.ToList())
+                {
+                    player.ItemStatus[key] = player.ItemStatus[key] = false;  
+                }
+            }
         }
 
         private void stealSomething(Player player)
