@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(1, 14);
+            int randomCard = random.Next(1, 16);
             switch (randomCard)
             {
                 case 1:
@@ -78,6 +78,10 @@ namespace gazdalkodjOkosan
                 case 14:
                     dogIncident(3000, Player);
                     break;
+                case 15:
+                    freeCar(Player);
+                    break;
+
             }
             btnExit.Visibility = Visibility.Visible;
         }
@@ -175,9 +179,18 @@ namespace gazdalkodjOkosan
 
         private void houseFire(int amount, Player player)
         {
-            if (player.Balance <= amount) player.Balance = 0;
-            else player.Balance -= amount;
-            lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+            if (player.RepairTool)
+            {
+                lblCard.Content = $"Volt szerelőkészleted ezt most megúsztad!";
+                player.RepairTool = false;
+            }
+            else
+            {
+                if (player.Balance <= amount) player.Balance = 0;
+                else player.Balance -= amount;
+                lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+            }
+
         }
 
         private void dogIncident(int amount, Player player)
@@ -185,6 +198,13 @@ namespace gazdalkodjOkosan
             if (player.Balance <= amount) player.Balance = 0;
             else player.Balance -= amount;
             lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon. Fizess {amount} Ft-ot új bútorra.";
+        }
+        private void freeCar( Player player)
+        {
+
+            lblCard.Content = $"Örököltél egy autót, eladhatod vagy megtarthatod!";
+            freeCar window = new freeCar(player);
+            window.ShowDialog();
         }
     }
 }

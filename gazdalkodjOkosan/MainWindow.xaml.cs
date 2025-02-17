@@ -59,8 +59,14 @@ namespace gazdalkodjOkosan
                 { rctCabinet, "szekreny.jpg" },
                 { rctTv, "tv.jpg" },
                 { rctBed, "agy.jpg" },
-                { rctLego, "lego.jpg" },
-                { rctWashing, "mosogep.webp" },
+                { rctLego, "lego.png" },
+                { rctWashing, "mosogep.webp" }, 
+                { Background, "asztal.jpg" },
+                { Cards, "kartyak-keret.png" },
+                { Title, "felirat-forgatva.png" },
+                { Wallet, "wallet.png" },
+                { brdDice, "dobokocka.png" }
+
 
 
 
@@ -225,21 +231,27 @@ namespace gazdalkodjOkosan
             if (currentPosition.Name == "borderMav")
             {
                 lblActionText.Content = "Elvonatozol az állatkertbe";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 7);
                 
             }
             if (currentPosition.Name == "borderHev")
             {
                 lblActionText.Content = "Elvonatozol a vidámparkba";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 4);
 
             }
             if (currentPosition.Name == "borderBkv")
             {
                 lblActionText.Content = "Elvonatozol a tropicáriumba";
+                btnDice.IsEnabled = false;
                 await Task.Delay(2000);
+                btnDice.IsEnabled = true;
                 PlayARound(player, 9);
 
             }
@@ -266,6 +278,13 @@ namespace gazdalkodjOkosan
             if (currentPosition.Name == "borderIkea")
             {
                 Ikea window = new Ikea(player);
+                window.ShowDialog();
+            }
+
+
+            if (currentPosition.Name == "borderJatekbolt")
+            {
+                Lego window = new Lego(player);
                 window.ShowDialog();
             }
 

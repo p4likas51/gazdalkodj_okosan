@@ -35,29 +35,34 @@
             <RowDefinition></RowDefinition>
             
         </Grid.RowDefinitions>
-        <Label Name="lblCarInsurance" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
-        <Label Name="lblHouseInsurance" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
-        <Label Grid.Row="0" Grid.Column="11" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Egyenleg:"/>
-        <Label Name="lblp1Balance" Grid.Row="1" Grid.Column="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="balance..." FontSize="25"/>
-        <Label Name="lblp2Balance" Grid.Row="1" Grid.Column="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="balance..." FontSize="25"/>
-        <Label Name="lblActionText" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" FontSize="25px" HorizontalContentAlignment="Center">
+        <Label Panel.ZIndex="1" Name="lblCarInsurance" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
+        <Label Panel.ZIndex="1" Name="lblHouseInsurance" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="3" Content="Itt jelenik meg a szöveg!" FontSize="30" Foreground="Black"/>
+        <Border CornerRadius="16" Panel.ZIndex="2" Grid.Row="0" Grid.Column="11" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="16 50 16 30" Background="#99000000" BorderBrush="#FF175215" BorderThickness="3"/>
+        <Border Name="Wallet" Panel.ZIndex="2" Grid.Row="0" Grid.Column="11" Grid.ColumnSpan="2" Grid.RowSpan="3" />
+        <Label Panel.ZIndex="3" Name="lblp1Balance" Grid.Row="2" Grid.Column="11" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="20" FontFamily="Arial Rounded MT Bold" Margin="30 0 0 0"/>
+        <Label Panel.ZIndex="3" Name="lblp2Balance" Grid.Row="2" Grid.Column="12" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="20" FontFamily="Arial Rounded MT Bold" Margin="0 0 30 0"/>
+        <Label Panel.ZIndex="1" Name="lblActionText" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" FontSize="25px" HorizontalContentAlignment="Center">
             <Label.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" TextWrapping="Wrap" TextAlignment="Center"/>
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
-        <Label Name="lblAction" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" FontSize="25px" HorizontalAlignment="Center"/>
+        <Label Name="lblAction" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" FontSize="25px" HorizontalAlignment="Center"/>
         <!--<Label Grid.Row="2" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="1" Content="X"/>
         <Label Grid.Row="7" Grid.Column="8" Content="X"/>
         <Label Grid.Row="2" Grid.Column="8" Content="X"/>-->
+        <Border Name="Background" Grid.ColumnSpan="13" Grid.RowSpan="9"></Border>
+        <Border Panel.ZIndex="1" Name="Cards" Grid.Column="6" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0 0 20 0"></Border>
+        <Border Panel.ZIndex="1" Name="Title" Grid.Column="2" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="30 0 0 0"></Border>
 
-        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
-        <Rectangle Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="Transparent" StrokeThickness="3"/>
+
+        <Rectangle Grid.Column="1" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="8"  Fill="Transparent" StrokeThickness="3"/>
+        <Rectangle Panel.ZIndex="0" Grid.Column="2" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Black" Fill="#FFE8E8E8" StrokeThickness="3"/>
         
         
-        <Rectangle Grid.Column="10" Grid.Row="3" Grid.RowSpan="5" Grid.ColumnSpan="3" Stroke="Black" Fill="Transparent" StrokeThickness="5"/>
+        <Rectangle Grid.Column="10" Grid.Row="3" Grid.RowSpan="5" Grid.ColumnSpan="3" Stroke="Black" Fill="White" StrokeThickness="5"/>
 
 
         <Border Panel.ZIndex="1" BorderBrush="Black" BorderThickness="7" Grid.Column="10" Grid.Row="3"  Grid.ColumnSpan="3">
@@ -235,12 +240,15 @@
                 <ImageBrush ImageSource="pack://application:,,,/hazvasarlas.jpg" Stretch="Fill"></ImageBrush>
             </Border.Background>-->
         </Border>
-        
-        
-        
 
-        <Label Name="lblDice" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="..."/>
-        <Button Name="btnDice" Grid.Row="0" Grid.Column="6" Content="Dobas" Click="btnDice_Click"/>
+
+        <Border CornerRadius="16" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0 10 100 10" Background="#99000000"></Border>
+
+        <Label VerticalAlignment="Center" Name="lblDice" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Foreground="White"/>
+        <Border CornerRadius="16" Name="brdDice" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"/>
+
+        <Button Margin="0 20 0 20" Name="btnDice" Grid.RowSpan="2" Grid.Row="0" Grid.Column="6" Padding="10" Content="Dobás" Click="btnDice_Click" FontWeight="DemiBold" Background="White"/>
+        <Border Margin="0 20 0 20" Grid.RowSpan="2" Grid.Row="0" Grid.Column="6"  Padding="10" BorderBrush="Black" BorderThickness="4"/>
 
     </Grid>
 </Window>
