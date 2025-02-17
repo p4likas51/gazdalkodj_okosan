@@ -171,8 +171,6 @@ namespace gazdalkodjOkosan
             UpdatePlayerPosition(player);
             lblDice.Content = $"{player.Name} : {player.DiceRoll}";
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
-            lblCarInsurance.Content = $"{player.Name} : {player.ItemStatus["carInsurance"]}";
-            lblHouseInsurance.Content = $"{player.Name} : {player.ItemStatus["houseInsurance"]}";
             updateBalance();
             FieldActions(element, player);
             updateBalance();
@@ -187,8 +185,6 @@ namespace gazdalkodjOkosan
             UpdatePlayerPosition(player);
             lblDice.Content = $"Piros játékos dobása: {player.DiceRoll}";
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
-            lblCarInsurance.Content = $"{player}: {player.ItemStatus["carInsurance"]}";
-            lblHouseInsurance.Content = $"{player}: {player.ItemStatus["houseInsurance"]}";
             updateBalance();
             FieldActions(element, player);
             updateBalance();
@@ -206,7 +202,6 @@ namespace gazdalkodjOkosan
                 {
                     CarInsurance carInsuranceWindow = new CarInsurance(player, "car");
                     carInsuranceWindow.ShowDialog();
-                    MessageBox.Show($"{player.ItemStatus["carInsurance"]}");
                 }
 
             }
