@@ -7,11 +7,22 @@
         mc:Ignorable="d"
         Title="Vegkiiras" Height="450" Width="800" FontSize="40">
     <Grid>
-        <Grid.Background>
-            <ImageBrush/>
-        </Grid.Background>
-        <Label Content="Gratulálunk ... a győztes!" HorizontalAlignment="Center" Height="74" Margin="0,20,0,0" VerticalAlignment="Top" Background="#FFF7C556" Panel.ZIndex="1"/>
-        <Button Name="btnKilepes" Width="120px" Height="50px" Margin="550 300 0 0" Content="Kilépés" FontSize="20px" Click="btnKilepes_Click" Panel.ZIndex="1" Background="#FFF7C556"/>
-        <Image Source="/images/gyoztes.jfif" Stretch="Fill"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114*"></ColumnDefinition>
+            <ColumnDefinition Width="573*"></ColumnDefinition>
+            <ColumnDefinition Width="113*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Panel.ZIndex="1" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Margin="30,0,30,0" CornerRadius="12">
+            <Label FontWeight="DemiBold" Name="winningText" Content="Gratulálunk ... a győztes!" HorizontalContentAlignment="Center" Height="74"  Background="#99F7C556" Panel.ZIndex="1" Width="511"/>
+
+        </Border>
+        <Button BorderBrush="Black" BorderThickness="2" FontWeight="DemiBold" Name="btnKilepes" Margin="197,40,198,56" Content="Kilépés" FontSize="20px" Click="btnKilepes_Click" Panel.ZIndex="1" Background="#FFF7C556" Grid.Column="1" Grid.Row="2"/>
+        <Border Grid.ColumnSpan="3" Grid.RowSpan="3" Name="winningBg" />
     </Grid>
 </Window>

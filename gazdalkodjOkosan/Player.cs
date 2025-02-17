@@ -63,15 +63,15 @@ namespace gazdalkodjOkosan
             RepairTool = false;
             ItemStatus = new Dictionary<string, bool>()
     {
-        {"house", false },
-        {"car", false },
-        {"tv", false },
-        {"oven", false },
-        {"cabinet", false },
-        {"bed", false },
-        {"lego", false },
-        {"washingmachine", false },
-        {"sofa", false },
+        {"house", true },
+        {"car", true },
+        {"tv", true },
+        {"oven", true },
+        {"cabinet", true },
+        {"bed", true },
+        {"lego", true },
+        {"washingmachine", true },
+        {"sofa", true },
         {"houseInsurance", false },
         {"carInsurance", false }
     };

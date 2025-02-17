@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(1, 16);
+            int randomCard = random.Next(1, 18);
             switch (randomCard)
             {
                 case 1:
@@ -80,6 +80,9 @@ namespace gazdalkodjOkosan
                     break;
                 case 15:
                     freeCar(Player);
+                    break;
+                case 17:
+                    stealSomething(Player);
                     break;
 
             }
@@ -204,6 +207,13 @@ namespace gazdalkodjOkosan
 
             lblCard.Content = $"Örököltél egy autót, eladhatod vagy megtarthatod!";
             freeCar window = new freeCar(player);
+            window.ShowDialog();
+        }
+
+        private void stealSomething(Player player)
+        {
+            lblCard.Content = $"Felkeresett egy régi tolvaj ismerősöd. Lopass vele egy tetszőleges berendezést a házadba! (nem lehet autó)\r\n";
+            Steal window = new Steal(player);
             window.ShowDialog();
         }
     }

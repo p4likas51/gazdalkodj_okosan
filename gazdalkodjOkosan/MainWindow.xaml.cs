@@ -26,6 +26,7 @@ namespace gazdalkodjOkosan
         public MainWindow()
         {
             InitializeComponent();
+            
 
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
@@ -74,6 +75,8 @@ namespace gazdalkodjOkosan
 
             Loaded += (sender, e) =>
             {
+
+                
                 GameGrid.Children.Add(player1.Shape);
                 Grid.SetRow(player1.Shape, player1.Row);
                 Grid.SetColumn(player1.Shape, player1.Column);
@@ -165,6 +168,7 @@ namespace gazdalkodjOkosan
         }
         private void PlayARound(Player player)
         {
+
             lblActionText.Content = "";
             lblAction.Content = "";
             player.MovePlayer();
@@ -177,6 +181,12 @@ namespace gazdalkodjOkosan
             FieldActions(element, player);
             updateBalance();
             showItemImages(player);
+
+            if (player.ItemStatus["house"] == true && player.ItemStatus["car"] == true && player.ItemStatus["tv"] == true && player.ItemStatus["oven"] == true && player.ItemStatus["cabinet"] == true && player.ItemStatus["bed"] == true && player.ItemStatus["lego"] == true && player.ItemStatus["washingmachine"] == true && player.ItemStatus["sofa"] == true)
+            {
+                Vegkiiras window = new Vegkiiras(player);
+                window.ShowDialog();
+            }
         }
 
         private void PlayARound(Player player, int step)
