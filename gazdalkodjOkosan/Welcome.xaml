@@ -1,0 +1,41 @@
+﻿<Window x:Class="gazdalkodjOkosan.Welcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gazdalkodjOkosan"
+        mc:Ignorable="d"
+        Title="Welcome" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="144*"></ColumnDefinition>
+            <ColumnDefinition Width="509*"></ColumnDefinition>
+            <ColumnDefinition Width="147*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Name="welcomeImage" Grid.ColumnSpan="3" Grid.RowSpan="3"></Border>
+        <Label Padding="15" Grid.Row="0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" HorizontalAlignment="Left" Width="548" Margin="127,30,0,0" Background="#99000000" Foreground="White" Height="63" Grid.ColumnSpan="3">Üdvözlünk a Gazdálkodj Okosan játékban!</Label>
+
+        <ListView BorderBrush="Black" BorderThickness="2" Padding="10" Grid.Row="1" Background="#99000000" Foreground="White" Margin="5,0,0,113" Grid.RowSpan="2" Grid.Column="1">
+
+            <ListViewItem FontSize="16" FontWeight="Bold">Főbb szabályok:</ListViewItem>
+            <ListViewItem FontSize="12">- Játékosok száma: 2</ListViewItem>
+            <ListViewItem FontSize="12">- Kezdő egyenleg: Minden játékos meghatározott kezdő pénzösszeggel indul.</ListViewItem>
+            <ListViewItem FontSize="13" FontWeight="DemiBold">Cél:</ListViewItem>
+            <ListViewItem FontSize="12">- A játékosoknak meg kell tölteniük a házukat mind a 8 berendezéssel.</ListViewItem>
+            <ListViewItem FontSize="12">- Az nyer, akinek ez hamarabb sikerül.</ListViewItem>
+        </ListView>
+
+        <Label Padding="15" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="DemiBold" Grid.Column="1" Background="#99000000" Foreground="White" Height="57" Width="284">Sok szerencsét és jó játékot!
+        </Label>
+
+        <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,7" FontSize="14" FontWeight="DemiBold" Padding="4" Background="White" Click="Button_Click" Height="29" Width="56" BorderBrush="Black">Kezdés
+        </Button>
+    </Grid>
+</Window>
