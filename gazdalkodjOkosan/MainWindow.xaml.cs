@@ -166,9 +166,17 @@ namespace gazdalkodjOkosan
             lblp2Balance.Foreground = Brushes.Blue;
             lblp2Balance.Content = $"{player2.Balance}Ft";
         }
+        private void updateInsurance(Player player)
+        {
+            if (player.ItemStatus["carInsurance"]) lblCarInsurance.Content = "Gépjármű biztosítás: van";
+            else lblCarInsurance.Content = "Gépjármű biztosítás: nincs";
+            if (player.ItemStatus["houseInsurance"]) lblHouseInsurance.Content = "Ház biztosítás: van";
+            else lblHouseInsurance.Content = "Ház biztosítás: nincs";
+        }
         private void PlayARound(Player player)
         {
-
+            updateInsurance(player);
+            showItemImages(player);
             lblActionText.Content = "";
             lblAction.Content = "";
             player.MovePlayer();
@@ -177,6 +185,7 @@ namespace gazdalkodjOkosan
             var element = Table.FindElementInGrid(GameGrid, player.Row, player.Column);
             updateBalance();
             FieldActions(element, player);
+            updateInsurance(player);
             updateBalance();
             showItemImages(player);
 

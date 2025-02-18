@@ -112,6 +112,8 @@
         <TextBlock Panel.ZIndex="0" Name="tblWashing" Grid.Row="7" Grid.Column="12" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">Fürdő (mosógép)</TextBlock>
 
 
+        <Label Name="lblCarInsurance" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Content="Gépjármű biztosítás: Nincs" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0 0 0 10" FontSize="30"/>
+        <Label Name="lblHouseInsurance" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="3" Content="Ház biztosítás: Nincs" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0 0 0 10" FontSize="30"/>
 
 
         <Border Grid.Column="1" Grid.Row="2" Name="borderStart">

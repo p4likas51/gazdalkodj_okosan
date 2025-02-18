@@ -33,7 +33,7 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Random random = new Random();
-            int randomCard = random.Next(17, 18);
+            int randomCard = random.Next(1, 19);
             switch (randomCard)
             {
                 case 1:
@@ -86,6 +86,9 @@ namespace gazdalkodjOkosan
                     break;
                 case 17:
                     stealSomething(Player);
+                    break;
+                case 18:
+                    carAccident(Player);
                     break;
 
             }
@@ -217,18 +220,26 @@ namespace gazdalkodjOkosan
         }
         private void houseFire(Player player)
         {
-            if (player.ItemStatus["houseInsurance"] == true)
+            if (player.ItemStatus["house"])
             {
-                lblCard.Content = "Leégett a házad de fizet a biztosítód, de felbontották a szerződést újat kell majd kötnöd";
-                player.ItemStatus["houseInsurance"] = false;
+                if (player.ItemStatus["houseInsurance"] == true)
+                {
+                    lblCard.Content = "Leégett a házad de fizet a biztosítód, de felbontották a szerződést újat kell majd kötnöd";
+                    player.ItemStatus["houseInsurance"] = false;
+                }
+                else
+                {
+                    lblCard.Content = "Leégett a házad és még biztosításod sem volt...";
+                    foreach (var key in player.ItemStatus.Keys.ToList())
+                    {
+                        player.ItemStatus[key] = player.ItemStatus[key] = false;
+                    }
+                }
             }
             else
             {
-                lblCard.Content = "Leégett a házad és még biztosításod sem volt...";
-                foreach (var key in player.ItemStatus.Keys.ToList())
-                {
-                    player.ItemStatus[key] = player.ItemStatus[key] = false;  
-                }
+                player.Balance += 1000;
+                lblCard.Content = "Találtál a földön 1000Ft-ot!";
             }
         }
 
@@ -237,6 +248,28 @@ namespace gazdalkodjOkosan
             lblCard.Content = $"Felkeresett egy régi tolvaj ismerősöd. Lopass vele egy tetszőleges berendezést a házadba! (nem lehet autó)\r\n";
             Steal window = new Steal(player);
             window.ShowDialog();
+        }
+
+        private void carAccident(Player player)
+        {
+            if (player.ItemStatus["car"])
+            {
+                if (player.ItemStatus["carInsurance"] == true)
+                {
+                    lblCard.Content = "Totálkár lett az autód egy baleset miatt, de fizet a biztosítód";
+                    player.ItemStatus["carInsurance"] = false;
+                }
+                else
+                {
+                    lblCard.Content = "Totálkár lett az autód egy baleset miatt és még biztosításod sem volt...";
+                    player.ItemStatus["car"] = false;
+                }
+            }
+            else
+            {
+                player.Balance -= 1000;
+                lblCard.Content = "Nagyon megfogott egy utcazenész előadása adtál neki 1000Ft-ot";
+            }
         }
     }
 }
