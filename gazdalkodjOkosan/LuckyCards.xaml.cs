@@ -52,13 +52,13 @@ namespace gazdalkodjOkosan
                     Taxes(7000, Player);
                     break;
                 case 6:
-                    wonPrize(6000, Player);
+                    wonPrize(10000, Player);
                     break;
                 case 7:
                     WorkerOfTheYear(10000, Player);
                     break;
                 case 8:
-                    moneyGetBack(3000, Player);
+                    moneyGetBack(9000, Player);
                     break;
                 case 9:
                     freeHouseInsurance(Player);
@@ -70,13 +70,13 @@ namespace gazdalkodjOkosan
                     OnePlusRound();
                     break;
                 case 12:
-                    GetRepairTool(Player);
+                    GetRepairTool(8000, Player);
                     break;
                 case 13:
-                    houseFire(5000, Player);
+                    shortCircuit(5000, Player);
                     break;
                 case 14:
-                    dogIncident(3000, Player);
+                    dogIncident(5000, Player);
                     break;
                 case 15:
                     freeCar(Player);
@@ -119,14 +119,14 @@ namespace gazdalkodjOkosan
         private void Promotion(int amount, Player player)
         {
             player.Bonus = amount;
-            lblCard.Content = "Előléptettek, így extra fizetést kapsz!";
+            lblCard.Content = $"Előléptettek, így extra fizetést kapsz!\n(+{amount}Ft)";
 
         }
 
         private void LessBonus(int amount, Player player)
         {
             player.Bonus = amount;
-            lblCard.Content = "Új kormányrendelet miatt csökkent a pályakezdő támogatásod!";
+            lblCard.Content = $"Új kormányrendelet miatt csak kevésbé nő a pályakezdő támogatásod!\n(+{amount}Ft)";
         }
 
         private void Taxes(int amount, Player player)
@@ -176,40 +176,67 @@ namespace gazdalkodjOkosan
             player.DiscountItems = 0.8;
             player.DiscountCar = 0.9;
             player.DiscountHouse = 0.9;
-            lblCard.Content = "KUPONNAPOK! A következő berendezés vásárásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!";
+            lblCard.Content = "KUPONNAPOK! A következő berendezés vásárlásodra 20% kedvezményt kapsz. A következő autó vagy lakás vásárlásodra 10% kedvezményt kapsz!";
         }
         private void OnePlusRound()
         {
             PlusRound = true;
             lblCard.Content = "Nagy késésben vagy munkahelyedről!\nDobj mégegyszer!";
         }
-        private void GetRepairTool(Player player)
-        {
-            lblCard.Content = "Találtál egy szerelődobozt az utcán, ha bármid elromlik egyszer meg tudod javítani!";
-            player.RepairTool = true;
-        }
-
-        private void houseFire(int amount, Player player)
+        private void GetRepairTool(int amount, Player player)
         {
             if (player.RepairTool)
             {
-                lblCard.Content = $"Volt szerelőkészleted ezt most megúsztad!";
+                lblCard.Content = $"Haverod adott egy szerszámosládát, mert nem tudta, hogy már van neked.\nFeltetted Marketplacere és el is vitték +{amount}Ft";
+                player.Balance += amount;
+            }
+            else
+            {
+                lblCard.Content = "Találtál egy szerelődobozt az utcán, ha bármid elromlik egyszer meg tudod javítani!";
+                player.RepairTool = true;
+            }
+
+        }
+
+        private void shortCircuit(int amount, Player player)
+        {
+            if (player.ItemStatus["house"])
+            {
+                if (player.RepairTool)
+                {
+                    lblCard.Content = $"Volt szerelőkészleted ezt most megúsztad!";
+                    player.RepairTool = false;
+                }
+                else
+                {
+                    if (player.Balance <= amount) player.Balance = 0;
+                    else player.Balance -= amount;
+                    lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+                }
+            }
+            else
+            {
+                lblCard.Content = $"Amíg nincs ház, nics mi elromoljon így könnyebb spórolni is!\n+{amount}Ft";
+                player.Balance += amount;
+            }
+            
+
+        }
+
+        private void dogIncident(int amount, Player player)
+        {
+            if (player.RepairTool)
+            {
+                lblCard.Content = $"Kölyök kutyusod megrágta az asztal szélét, de csodadobozodnak hála meg tudtad javítani!";
                 player.RepairTool = false;
             }
             else
             {
                 if (player.Balance <= amount) player.Balance = 0;
                 else player.Balance -= amount;
-                lblCard.Content = $"Bedugva hagytad a karácsonyfa világításod, ami rövidzárlatot kapott. A sérült bútorokért fizetned kell {amount} Ft-ot.";
+                lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon.\nFizess {amount} Ft-ot új bútorra.";
             }
-
-        }
-
-        private void dogIncident(int amount, Player player)
-        {
-            if (player.Balance <= amount) player.Balance = 0;
-            else player.Balance -= amount;
-            lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon. Fizess {amount} Ft-ot új bútorra.";
+            
         }
         private void freeCar( Player player)
         {

@@ -59,6 +59,7 @@ namespace gazdalkodjOkosan
             Player.ItemStatus["tv"] = true;
             lblMediaText.Content = "Vásároltál egy televíziót!";
             Player.Balance -= Player.ItemPrices["tv"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
         }
@@ -68,6 +69,7 @@ namespace gazdalkodjOkosan
             Player.ItemStatus["oven"] = true;
             lblMediaText.Content = "Vásároltál egy sütőt!";
             Player.Balance -= Player.ItemPrices["oven"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 
@@ -78,6 +80,7 @@ namespace gazdalkodjOkosan
             Player.ItemStatus["washingmachine"] = true;
             lblMediaText.Content = "Vásároltál egy mosógépet!";
             Player.Balance -= Player.ItemPrices["washingmachine"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 

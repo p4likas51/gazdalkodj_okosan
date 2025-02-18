@@ -58,12 +58,12 @@ namespace gazdalkodjOkosan
 
         private int Step {  get; set; }
 
-        public Player(string name, Brush playerColor, int startingBalance = 200000)
+        public Player(string name, Brush playerColor, int startingBalance = 30000)
         {
             RepairTool = false;
             ItemStatus = new Dictionary<string, bool>()
     {
-        {"house", true },
+        {"house", false },
         {"car", false },
         {"tv", false },
         {"oven", false },
@@ -104,14 +104,14 @@ namespace gazdalkodjOkosan
 
         public void UpdateItemPrices()
         {
-            ItemPrices["house"] = 30000 * DiscountHouse;
-            ItemPrices["car"] = 20000 * DiscountCar;
-            ItemPrices["tv"] = 12000 * DiscountItems;
-            ItemPrices["oven"] = 4000 * DiscountItems;
-            ItemPrices["cabinet"] = 4000 * DiscountItems;
-            ItemPrices["bed"] = 5000 * DiscountItems;
-            ItemPrices["lego"] = 2000 * DiscountItems;
-            ItemPrices["washingmachine"] = 5000 * DiscountItems;
+            ItemPrices["house"] = 60000 * DiscountHouse;
+            ItemPrices["car"] = 30000 * DiscountCar;
+            ItemPrices["tv"] = 15000 * DiscountItems;
+            ItemPrices["oven"] = 10000 * DiscountItems;
+            ItemPrices["cabinet"] = 12000 * DiscountItems;
+            ItemPrices["bed"] = 14000 * DiscountItems;
+            ItemPrices["lego"] = 8000 * DiscountItems;
+            ItemPrices["washingmachine"] = 12000 * DiscountItems;
             ItemPrices["sofa"] = 10000 * DiscountItems;
             ItemPrices["houseInsurance"] = 30000; 
             ItemPrices["carInsurance"] = 20000;

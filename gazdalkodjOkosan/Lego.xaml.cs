@@ -54,6 +54,7 @@ namespace gazdalkodjOkosan
 
             lblLegoText.Content = "Vásároltál egy LEGO-t!";
             Player.Balance -= Player.ItemPrices["lego"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 

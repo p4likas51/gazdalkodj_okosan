@@ -65,6 +65,7 @@ namespace gazdalkodjOkosan
 
              lblIkeaText.Content = "Vásároltál egy kanapét!";
             Player.Balance -= Player.ItemPrices["sofa"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 
@@ -77,6 +78,7 @@ namespace gazdalkodjOkosan
                 Player.ItemStatus["cabinet"] = true;
                 lblIkeaText.Content = "Vásároltál egy ruhásszekrényt!";
             Player.Balance -= Player.ItemPrices["cabinet"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 
@@ -90,6 +92,7 @@ namespace gazdalkodjOkosan
                 Player.ItemStatus["bed"] = true;
                 lblIkeaText.Content = "Vásároltál egy ágyat!";
             Player.Balance -= Player.ItemPrices["bed"];
+            Player.DiscountItems = 1;
             DialogResult = true;
             Close();
 

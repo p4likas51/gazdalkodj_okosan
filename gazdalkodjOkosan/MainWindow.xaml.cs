@@ -278,8 +278,7 @@ namespace gazdalkodjOkosan
             {
                 if (player.Balance <= 10000) player.Balance = 0;
                 else player.Balance -= 10000;
-                lblActionText.Content = "Rabló mezőre léptél:";
-                lblAction.Content = "-10000Ft";
+                lblActionText.Content = "Rabló mezőre léptél:\n-10000Ft";
             }
 
             if (currentPosition.Name.StartsWith("borderSzerencse"))
@@ -310,8 +309,7 @@ namespace gazdalkodjOkosan
             if (currentPosition.Name == "borderLotto")
             {
                 player.Balance += 5000;
-                lblActionText.Content = "Nyertél egy kaparós sorsjegyen";
-                lblAction.Content = "+5000Ft";
+                lblActionText.Content = "Nyertél egy kaparós sorsjegyen\n+5000Ft";
             }
             if (currentPosition.Name == "borderAllatkert")
             {
@@ -337,14 +335,12 @@ namespace gazdalkodjOkosan
             {
                 if (player.Balance <= 1000) player.Balance = 0;
                 else player.Balance -= 1000;
-                lblActionText.Content = "Leszart egy madár, el kell vinned a kabátod a tisztítóba";
-                lblAction.Content = "-1000Ft";
+                lblActionText.Content = "Leszart egy madár, el kell vinned a kabátod a tisztítóba\n-1000Ft";
             }
             if (currentPosition.Name == "borderTarca")
             {
                 player.Balance += 3000;
-                lblActionText.Content = "Találtál egy tárcát a földön";
-                lblAction.Content = "+3000Ft";
+                lblActionText.Content = "Találtál egy tárcát a földön\n+3000Ft";
             }
 
 

@@ -19,7 +19,7 @@ namespace gazdalkodjOkosan
     /// </summary>
     public partial class Jail : Window
     {
-        private int amount = 25000;
+        private int amount = 15000;
         public bool OutOfJail { get; private set; }
         public Player Player { get; private set; }
         public Jail(Player player)

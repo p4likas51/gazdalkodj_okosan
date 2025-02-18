@@ -67,8 +67,16 @@ namespace gazdalkodjOkosan
             Button btn = sender as Button;
             btn.IsEnabled = false;
             Player.Balance -= Amount;
-            if (Item == "car") Player.ItemStatus["car"] = true;
-            if (Item == "house") Player.ItemStatus["house"] = true;
+            if (Item == "car")
+            {
+                Player.ItemStatus["car"] = true;
+                Player.DiscountCar = 1;
+            }
+            if (Item == "house")
+            {
+                Player.ItemStatus["house"] = true;
+                Player.DiscountHouse = 1;
+            }
 
         }
 
