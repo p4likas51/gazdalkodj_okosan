@@ -57,7 +57,7 @@ namespace gazdalkodjOkosan
                 borderCar.Visibility = Visibility.Collapsed;
                 lblTitle.Content = "Ház vásárlás";
                 Amount = player.ItemPrices["house"];
-                lblCarBuy.Content = $"Összeg: -{Amount}Ft";
+                lblCarBuy.Content = $"Összeg: {Amount}Ft";
                 if (player.Balance >= Amount && player.ItemStatus["house"] == false) btnCarBuy.IsEnabled = true;
             }
         }

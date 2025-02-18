@@ -38,6 +38,9 @@ namespace gazdalkodjOkosan
                 BedBuy.IsEnabled = false;
             }
 
+            lblSofa.Content = $"Kanapé - {player.ItemPrices["sofa"]}Ft";
+            lblBed.Content = $"Ágy - {player.ItemPrices["bed"]}Ft";
+            lblCabinet.Content = $"Szekrény - {player.ItemPrices["cabinet"]}Ft";
 
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {

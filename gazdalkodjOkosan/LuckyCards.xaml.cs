@@ -225,16 +225,24 @@ namespace gazdalkodjOkosan
 
         private void dogIncident(int amount, Player player)
         {
-            if (player.RepairTool)
+            if (player.ItemStatus["sofa"])
             {
-                lblCard.Content = $"Kölyök kutyusod megrágta az asztal szélét, de csodadobozodnak hála meg tudtad javítani!";
-                player.RepairTool = false;
+                if (player.RepairTool)
+                {
+                    lblCard.Content = $"Kölyök kutyusod megrágta az asztal szélét, de csodadobozodnak hála meg tudtad javítani!";
+                    player.RepairTool = false;
+                }
+                else
+                {
+                    if (player.Balance <= amount) player.Balance = 0;
+                    else player.Balance -= amount;
+                    lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon.\nFizess {amount} Ft-ot új bútorra.";
+                }
             }
             else
             {
-                if (player.Balance <= amount) player.Balance = 0;
-                else player.Balance -= amount;
-                lblCard.Content = $"A kölyök labradorod széttépte a kanapéd, amíg nem voltál otthon.\nFizess {amount} Ft-ot új bútorra.";
+                lblCard.Content = $"Kutyusod nyert egy ügyességi versenyt\nJutalmad: {amount}Ft";
+                player.Balance += amount;
             }
             
         }

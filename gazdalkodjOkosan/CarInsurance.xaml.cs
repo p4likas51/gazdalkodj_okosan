@@ -49,7 +49,7 @@ namespace gazdalkodjOkosan
                 if (Player.Balance >= Amount && Player.ItemStatus["house"] == true) btnCarInsurance.IsEnabled = true;
 
             }
-            lblAmount.Content = $"-{Amount}";
+            lblAmount.Content = $"-{Amount}Ft";
         }
 
         private void btnCarInsurance_Click(object sender, RoutedEventArgs e)

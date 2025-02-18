@@ -38,6 +38,10 @@ namespace gazdalkodjOkosan
                 WashingmachineBuy.IsEnabled = false;
             }
 
+            lblTv.Content = $"Televízió - {player.ItemPrices["tv"]} Ft";
+            lblOven.Content = $"Sütő - {player.ItemPrices["oven"]} Ft";
+            lblWashingmachine.Content = $"Mosógép - {player.ItemPrices["washingmachine"]} Ft";
+
             Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
                 { MediaBackground, "mediabelter.jpg" },

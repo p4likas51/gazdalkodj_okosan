@@ -31,6 +31,8 @@ namespace gazdalkodjOkosan
                 btnLegoBuy.IsEnabled = false;
             }
 
+            lblLego.Content = $"{player.ItemPrices["lego"]}Ft";
+
                 Dictionary<Border, string> kepek = new Dictionary<Border, string>()
             {
                 { LegoBackground, "regiouzlet.jpg" },
