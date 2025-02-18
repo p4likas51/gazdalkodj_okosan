@@ -25,6 +25,8 @@ namespace gazdalkodjOkosan
         Player player2 = new Player("Kék", Brushes.Blue);
         public MainWindow()
         {
+            Welcome window = new Welcome();
+            window.ShowDialog();
             InitializeComponent();
             
 
@@ -76,7 +78,7 @@ namespace gazdalkodjOkosan
             Loaded += (sender, e) =>
             {
 
-                
+
                 GameGrid.Children.Add(player1.Shape);
                 Grid.SetRow(player1.Shape, player1.Row);
                 Grid.SetColumn(player1.Shape, player1.Column);
