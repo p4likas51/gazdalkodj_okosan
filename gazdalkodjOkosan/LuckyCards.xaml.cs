@@ -113,7 +113,7 @@ namespace gazdalkodjOkosan
         private void CarDiscount(double amount, Player player)
         {
             player.DiscountCar = amount;
-            lblCard.Content = $"Autóvásárlási akció! A következő autóvásárlásnál {amount}%-os  kedvezményt kapsz.";
+            lblCard.Content = $"Autóvásárlási akció! A következő autóvásárlásnál 30%-os  kedvezményt kapsz.";
         }
 
         private void Promotion(int amount, Player player)
